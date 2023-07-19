@@ -2,8 +2,13 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ShellComponent} from "./components/shell/shell.component";
 import {authenticationGuard} from "./guard/authentication.guard";
+import {LandingComponent} from "./components/landing/landing.component";
 
 const routes: Routes = [
+  {
+    path: '',
+    component: LandingComponent
+  },
   {
     path: 'auth',
     loadChildren: () => import('./modules/application/authentication/authentication.module').then(m => m.AuthenticationModule)
