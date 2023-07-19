@@ -24,12 +24,6 @@ export interface LaunchResponse {
   schoolStats?: SchoolStats
 }
 
-export interface SchoolStat {
-  name: string,
-  value: any,
-  icon: string
-}
-
 export interface SchoolStats {
   numberOfTeachers: number,
   numberOfStudents: number,
@@ -37,7 +31,13 @@ export interface SchoolStats {
   numberOfApplications: number
 }
 
-export const EmptySchoolStats: SchoolStat[] = [
+export interface EntityStat {
+  name: string,
+  value: any,
+  icon: string
+}
+
+export const EmptySchoolStats: EntityStat[] = [
   {
     name: 'Teachers',
     value: 0,
@@ -57,5 +57,28 @@ export const EmptySchoolStats: SchoolStat[] = [
     name: 'Applications',
     value: 0,
     icon: 'folder-open'
+  }
+];
+
+export const EmptyStudentStats: EntityStat[] = [
+  {
+    name: $localize `Class Level`,
+    value: 0,
+    icon: 'chalkboard-user'
+  },
+  {
+    name: 'Courses',
+    value: 0,
+    icon: 'folder-open'
+  },
+  {
+    name: 'Current Sequence',
+    value: 0,
+    icon: 'user-graduate'
+  },
+  {
+    name: 'Current Year',
+    value: 0,
+    icon: 'building'
   }
 ];

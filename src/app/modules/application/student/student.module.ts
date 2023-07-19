@@ -14,11 +14,11 @@ import {LibraryModule} from "../../library/library.module";
     StuHomeComponent,
     StuApplicationsComponent
   ],
-  imports: [
-    CommonModule,
-    StudentRoutingModule,
-    LibraryModule
-  ]
+    imports: [
+        CommonModule,
+        StudentRoutingModule,
+        LibraryModule,
+    ]
 })
 export class StudentModule {
 }

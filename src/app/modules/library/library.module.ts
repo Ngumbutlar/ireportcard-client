@@ -40,6 +40,7 @@ import {InputNumberModule} from "primeng/inputnumber";
 import {MultiSelectModule} from "primeng/multiselect";
 import {AccordionModule} from "primeng/accordion";
 import {StepsModule} from "primeng/steps";
+import {ChartModule} from "primeng/chart";
 
 
 @NgModule({
@@ -88,6 +89,7 @@ import {StepsModule} from "primeng/steps";
     MultiSelectModule,
     AccordionModule,
     StepsModule,
+    ChartModule,
     TableListUsersComponent,
     FormTeacherAddComponent,
     TableListClassesComponent,
@@ -115,7 +117,8 @@ import {StepsModule} from "primeng/steps";
     InputNumberModule,
     MultiSelectModule,
     AccordionModule,
-    StepsModule
+    StepsModule,
+    ChartModule
   ]
 })
 export class LibraryModule {

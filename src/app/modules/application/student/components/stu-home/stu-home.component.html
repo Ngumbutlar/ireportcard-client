@@ -1,14 +1,50 @@
-<p-tabView>
-  <p-tabPanel>
-    <ng-template></ng-template>
-  </p-tabPanel>
-  <p-tabPanel>
-    <ng-template></ng-template>
-  </p-tabPanel>
-  <p-tabPanel>
-    <ng-template></ng-template>
-  </p-tabPanel>
-  <p-tabPanel>
-    <ng-template></ng-template>
-  </p-tabPanel>
-</p-tabView>
+<section class="surface-0 app-bg-body">
+  <div class="grid mb-3">
+    <div *ngFor="let stat of studentStats" class="app-bg-body col-12 md:col-6 lg:col-3">
+      <div class="surface-card shadow-2 p-3 border-round border-round-xl">
+        <div class="flex justify-content-between align-content-center mb-1 p-2">
+          <div>
+            <span class="block text-500 font-medium mb-3">{{stat.name}}</span>
+            <div class="text-900 font-bold text-2xl">{{stat.value}}</div>
+          </div>
+          <div
+            class="flex align-items-center justify-content-center bg-blue-50 border-round"
+            style="width:4.5rem;height:4.5rem">
+            <i class="fas fa-light fa-{{stat.icon}} text-blue-600 text-xl"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid mb-3">
+    <div class="col-12 md:col-8">
+      <div class="card">
+        <div class="card-header">
+          <span class="text-xl" i18n>Today</span>
+        </div>
+        <div class="card-body">
+          <div class="grid">
+            <div class="col-4">
+              <p-chart type="doughnut" [data]="data" [options]="options"></p-chart>
+            </div>
+            <div class="col-8 grid">
+              <div class="col-6" *ngFor="let i of [1,2,3,4,5,6]">
+                <div class="flex align-items-start gap-2">
+                  <i class="fas fa-users-rectangle align-self-center"></i>
+                  <div class="flex-column mt-4">
+                    <div>Course</div>
+                    <div>Sample Class</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="md:col-4">
+      <p-calendar [inline]="true"></p-calendar>
+    </div>
+  </div>
+</section>
