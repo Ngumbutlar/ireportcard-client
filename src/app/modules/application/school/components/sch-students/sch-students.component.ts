@@ -33,7 +33,7 @@ export class SchStudentsComponent implements DataComponent<UserPayload[]> {
 
   constructor(private _userService: UserService) {
     this.dataFilterForm = new FormModel({
-      formControls: [
+      controls: [
         new FormControlModel({
           label:$localize `Gender`,
           name: "gender",

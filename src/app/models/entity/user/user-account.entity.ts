@@ -9,7 +9,8 @@ export class UserAccountEntity extends BaseEntity {
     public role: Role,
     public userId?: number,
     public schoolId?: number,
-    public organisationId?: number
+    public organisationId?: number,
+    public name?: string
   ) {
     super();
   }

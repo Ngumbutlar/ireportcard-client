@@ -55,14 +55,20 @@ export class SchAcadCycleComponent implements OnInit {
   }
 
   cycleActionButton() {
+    console.log(this.academicCyclePayload)
+    console.log(IsUndefined(this.academicCyclePayload))
     return {
       disabled:
         IsNotUndefined(this.academicCyclePayload) &&
         IsNotUndefined(this.academicCyclePayload?.year.cycleInfo.closingDate),
       text: IsUndefined(this.academicCyclePayload) ? $localize `Launch Cycle` : $localize `Close Cycle`,
-      action: IsUndefined(this.academicCyclePayload) ?
-        this.submit : () => {
+      action: () => {
+        if (IsUndefined(this.academicCyclePayload)) {
+          this.submit();
+        } else {
+
         }
+      }
     }
   }
 
