@@ -7,6 +7,8 @@ import {DepartmentFilter} from "../../../../../models/filter/subject/department.
 import {FormControlModel} from "../../../form/models/form/form-control.model";
 import {DepartmentService} from "../../../../../services/http/subject/department.service";
 import {UserService} from "../../../../../services/http/user/user.service";
+import { RouterService } from 'src/app/services/general/router.service';
+import { AppRoute, AppRoutes } from 'src/app/app.routes';
 
 @Component({
   selector: 'app-table-list-departments',
@@ -23,6 +25,7 @@ export class TableListDepartmentsComponent
   constructor(
     private _departmentService: DepartmentService,
     private _userService: UserService,
+    private _routerService: RouterService
   ) {
   }
 
@@ -44,6 +47,10 @@ export class TableListDepartmentsComponent
       return this._userService.getById(userId)
     }
     return undefined;
+  }
+
+  viewAction = (departmentId: number) => {
+    this._routerService.nav([AppRoute.APP_DEPARTMENT_VIEW, departmentId])
   }
 }
 

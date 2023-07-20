@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { DepartmentEntity } from 'src/app/models/entity/subject/department.entity';
 
 @Component({
   selector: 'app-sch-departments-add',
@@ -6,5 +7,10 @@ import {Component} from '@angular/core';
   styleUrls: ['./sch-departments-add.component.css']
 })
 export class SchDepartmentsAddComponent {
-
+  loading: boolean = false;
+  
+  submit = (dep : DepartmentEntity) => {
+    console.log('clicked')
+    // Adds department to a school
+  }
 }

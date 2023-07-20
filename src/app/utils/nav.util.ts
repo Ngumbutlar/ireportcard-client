@@ -109,12 +109,12 @@ export module NavUtil {
       {
         label: "Add",
         icon: "square-plus",
-        link: "/app/school/classes/add",
+        link: "/app/school/departments/add",
       },
       {
         label: "View",
         icon: "square-plus",
-        link: "/app/school/classes/view",
+        link: "/app/school/departments/view",
       }
     ]
   }
