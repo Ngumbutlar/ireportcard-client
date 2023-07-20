@@ -1,0 +1,28 @@
+<div class="p-3">
+    <div class="p">
+        <form [formGroup]="form" (submit)="submit()" class="formgrid grid">
+            <div class="pb-3 col-12">
+                <span class="text-700 text-2xl">{{title}}</span>
+            </div>
+            
+            <!-- form -->
+            <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+                <span class="p-float-label">
+                    <input class="w-full" formControlName="classname" id="name" pInputText>
+                    <label [htmlFor]="'name'">Enter Class Name</label>
+                </span>
+            </div>
+            <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+                <span class="p-float-label">
+                    <input class="w-full" formControlName="classOrder" id="name" pInputText>
+                    <label [htmlFor]="'name'">Enter Class Order</label>
+                </span>
+            </div>
+
+            <!--buttons-->
+            <div class="field col-12">
+                <p-button [label]="buttonProperty.label" [loading]="loading" type="submit" [icon]="buttonProperty.icon"></p-button>
+            </div>
+        </form>
+    </div>
+</div>
