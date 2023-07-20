@@ -41,6 +41,7 @@ import {MultiSelectModule} from "primeng/multiselect";
 import {AccordionModule} from "primeng/accordion";
 import {StepsModule} from "primeng/steps";
 import {ChartModule} from "primeng/chart";
+import { FormDepartmentAddComponent } from './form/components/form-department-add/form-department-add.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import {ChartModule} from "primeng/chart";
     TableListUsersComponent,
     FormTeacherAddComponent,
     TableListClassesComponent,
-    TableListDepartmentsComponent
+    TableListDepartmentsComponent,
+    FormDepartmentAddComponent
   ],
   exports: [
     ReactiveFormsModule,
@@ -94,6 +96,7 @@ import {ChartModule} from "primeng/chart";
     FormTeacherAddComponent,
     TableListClassesComponent,
     TableListDepartmentsComponent,
+    FormDepartmentAddComponent,
   ],
   imports: [
     CommonModule,

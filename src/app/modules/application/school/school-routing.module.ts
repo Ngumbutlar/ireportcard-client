@@ -11,6 +11,7 @@ import {SchDepartmentsComponent} from "./components/sch-departments/sch-departme
 import {SchDepartmentsViewComponent} from "./components/sch-departments-view/sch-departments-view.component";
 import {SchSettingsComponent} from "./components/sch-settings/sch-settings.component";
 import {SchAcadCycleComponent} from "./components/sch-acad-cycle/sch-acad-cycle.component";
+import { SchDepartmentsAddComponent } from './components/sch-departments-add/sch-departments-add.component';
 
 const routes: Routes = [
   {
@@ -60,7 +61,11 @@ const routes: Routes = [
       },
       {
         path: 'add',
-        component: SchStudentsAddComponent
+        component: SchDepartmentsAddComponent
+      },
+      {
+        path: 'view/:id',
+        component: SchDepartmentsViewComponent
       },
       {
         path: 'view',
