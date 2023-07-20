@@ -104,7 +104,7 @@ export class AdminRegisterFormComponent implements SubmitForm {
         gender: this.form.get('gender')?.value,
         role: Role.ORGANISATION_ADMIN,
         accountId: '',
-        organisationId: this.orgId
+        organisationId: this.orgId,
       }
     );
     this.submitEvent.emit(user);

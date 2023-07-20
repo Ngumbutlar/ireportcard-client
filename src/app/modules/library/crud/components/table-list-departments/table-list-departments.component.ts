@@ -56,7 +56,7 @@ export class TableListDepartmentsComponent
 
 const DepartmentFilterFormModel = new FormModel(
   {
-    formControls: [
+    controls: [
       new FormControlModel({
         label:$localize `Name`,
         name: "name"

@@ -47,6 +47,12 @@ export const AppEndpoints: AppEndpointType = {
       main: '/school-staff'
     }
   },
+  student_application: {
+    main: '/student-application'
+  },
+  student_application_trial: {
+    main: '/student-application-trial'
+  },
   subject: {
     main: '/subject'
   }
@@ -71,6 +77,8 @@ enum AppEndpointKey {
   SECTION = 'section',
   SUBJECT = 'subject',
   DEPARTMENT = 'department',
+  STUDENT_APPLICATION = 'student_application',
+  STUDENT_APPLICATION_TRIAL = 'student_application_trial',
 }
 
 export class AppEndpoint {
@@ -86,6 +94,7 @@ export class AppEndpoint {
   static SUBJECT = new AppEndpoint(AppEndpointKey.SUBJECT);
   static USER = new AppEndpoint(AppEndpointKey.USER);
   static ACADEMIC_CYCLE = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE);
+  static STUDENT_APPLICATION_TRIAL = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION_TRIAL) ;
   private _base: string = "";
   private _path: string = "";
   private readonly _url: string

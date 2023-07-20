@@ -26,7 +26,7 @@ export class TableListUsersComponent implements OnInit, DataComponent<UserPayloa
 
   constructor(private _userService: UserService) {
     this.dataFilterForm = new FormModel({
-      formControls: [
+      controls: [
         new FormControlModel({
           label:$localize `Gender`,
           name: "gender",

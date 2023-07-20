@@ -35,7 +35,7 @@ export class TableListClassesComponent implements DataComponent<ClassLevelPayloa
 
   ngOnInit() {
     this._sectionService.list(SchoolBaseFilter.simple()).subscribe(res => {
-      this.filterForm.attribs.formControls[1].attribs.values =
+      this.filterForm.attribs.controls[1].attribs.values =
         FormControlValue.ofArray(res, (s: SectionPayload) => s.section);
     });
   }
@@ -52,7 +52,7 @@ export class TableListClassesComponent implements DataComponent<ClassLevelPayloa
 
 const ClassesFilterFormModel = new FormModel(
   {
-    formControls: [
+    controls: [
       new FormControlModel({
         label:$localize `Name`,
         name: "name"

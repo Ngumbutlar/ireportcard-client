@@ -31,7 +31,7 @@ export class SchCoursesComponent implements OnInit, FilterComponent {
 
   ngOnInit(): void {
     this._departmentService.list(SchoolBaseFilter.simple()).subscribe(res => {
-      this.filterForm.attribs.formControls[1].attribs.values =
+      this.filterForm.attribs.controls[1].attribs.values =
         FormControlValue.ofArray(res, (d: DepartmentPayload) => d.department);
     });
     this.refresh();
@@ -50,7 +50,7 @@ export class SchCoursesComponent implements OnInit, FilterComponent {
 }
 
 const SubjectFilterFormModel = new FormModel({
-  formControls: [
+  controls: [
     new FormControlModel({
       label:$localize `Name`,
       name: "name"

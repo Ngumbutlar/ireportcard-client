@@ -42,6 +42,7 @@ import {AccordionModule} from "primeng/accordion";
 import {StepsModule} from "primeng/steps";
 import {ChartModule} from "primeng/chart";
 import { FormDepartmentAddComponent } from './form/components/form-department-add/form-department-add.component';
+import { TableListSatComponent } from './crud/components/table-list-sat/table-list-sat.component';
 
 
 @NgModule({
@@ -64,7 +65,9 @@ import { FormDepartmentAddComponent } from './form/components/form-department-ad
     FormTeacherAddComponent,
     TableListClassesComponent,
     TableListDepartmentsComponent,
-    FormDepartmentAddComponent
+    FormDepartmentAddComponent,
+    TableListDepartmentsComponent,
+    TableListSatComponent
   ],
   exports: [
     ReactiveFormsModule,
@@ -97,6 +100,7 @@ import { FormDepartmentAddComponent } from './form/components/form-department-ad
     TableListClassesComponent,
     TableListDepartmentsComponent,
     FormDepartmentAddComponent,
+    TableListSatComponent,
   ],
   imports: [
     CommonModule,

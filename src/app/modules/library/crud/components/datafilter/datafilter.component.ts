@@ -68,7 +68,7 @@ export class DatafilterComponent implements OnInit, SubmitForm {
   }
 
   ngOnInit(): void {
-    this.formControlModels = this.formModel.attribs.formControls.map(v => v.attribs) ?? [];
+    this.formControlModels = this.formModel.attribs.controls.map(v => v.attribs) ?? [];
     this.controls = this.formControlModels.map(value => [value.name, []]);
     this.form = this._fb.group(ObjectUtil.from(this.controls));
   }
