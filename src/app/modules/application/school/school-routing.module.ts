@@ -91,7 +91,7 @@ const routes: Routes = [
         component: SchClassViewComponent
       }
     ]
-   
+
   },
   {
     path: 'courses',
