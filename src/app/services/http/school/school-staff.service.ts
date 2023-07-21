@@ -15,7 +15,6 @@ export class SchoolStaffService extends AppService<any, SchoolStaffPayload> {
   }
 
   getPayloadBySchoolId = (schoolId: Id): Observable<SchoolStaffPayload> => {
-    console.log(this.urlWithPath(`/school/${schoolId}`))
     return this.http.get<SchoolStaffPayload>(this.urlWithPath(`/school/${schoolId}`))
   }
 }

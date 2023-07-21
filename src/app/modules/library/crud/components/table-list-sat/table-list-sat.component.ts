@@ -33,6 +33,6 @@ export class TableListSatComponent {
   }
 
   refresh = () => {
-    this.satService.listPayload(this.filter).subscribe(res => this.data = res);
+    this.satService.list(this.filter).subscribe(res => this.data = res);
   }
 }

@@ -89,6 +89,10 @@ const routes: Routes = [
       {
         path: 'view',
         component: SchClassViewComponent
+      },
+      {
+        path: 'view/:id',
+        component: SchClassViewComponent
       }
     ]
 

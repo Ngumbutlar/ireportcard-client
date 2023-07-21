@@ -12,7 +12,7 @@ import {RouterLink} from "@angular/router";
 import {TableComponent} from './crud/components/table/table.component';
 import {DatatableComponent} from './crud/components/datatable/datatable.component';
 import {AdminRegisterFormComponent} from './form/components/admin-register-form/admin-register-form.component';
-import {SchoolAddFormComponent} from './form/components/school-add-form/school-add-form.component';
+import {FormSchoolUpsertComponent} from './form/components/form-school-upsert/form-school-upsert.component';
 import {
   AdminAssignSchoolFormComponent
 } from './form/components/admin-assign-school-form/admin-assign-school-form.component';
@@ -44,6 +44,8 @@ import { ClassAddFormComponent } from './form/components/class-add-form/class-ad
 import {ChartModule} from "primeng/chart";
 import { FormDepartmentAddComponent } from './form/components/form-department-add/form-department-add.component';
 import { TableListSatComponent } from './crud/components/table-list-sat/table-list-sat.component';
+import { TableListCoursesComponent } from './crud/components/table-list-courses/table-list-courses.component';
+import { FormUserAddComponent } from './form/components/form-user-add/form-user-add.component';
 
 
 @NgModule({
@@ -58,7 +60,7 @@ import { TableListSatComponent } from './crud/components/table-list-sat/table-li
     TableComponent,
     DatatableComponent,
     AdminRegisterFormComponent,
-    SchoolAddFormComponent,
+    FormSchoolUpsertComponent,
     AdminAssignSchoolFormComponent,
     DatafilterComponent,
     ModalComponent,
@@ -69,7 +71,10 @@ import { TableListSatComponent } from './crud/components/table-list-sat/table-li
     FormDepartmentAddComponent,
     TableListDepartmentsComponent,
     ClassAddFormComponent,
-    TableListSatComponent
+    TableListSatComponent,
+    TableListCoursesComponent,
+    FormUserAddComponent,
+    FormSchoolUpsertComponent
   ],
   exports: [
     ReactiveFormsModule,
@@ -81,7 +86,7 @@ import { TableListSatComponent } from './crud/components/table-list-sat/table-li
     AvatarComponent,
     DatatableComponent,
     AdminRegisterFormComponent,
-    SchoolAddFormComponent,
+    FormSchoolUpsertComponent,
     DatafilterComponent,
     CardModule,
     ButtonModule,
@@ -104,6 +109,8 @@ import { TableListSatComponent } from './crud/components/table-list-sat/table-li
     ClassAddFormComponent,
     FormDepartmentAddComponent,
     TableListSatComponent,
+    TableListCoursesComponent,
+    FormUserAddComponent,
   ],
   imports: [
     CommonModule,

@@ -32,12 +32,12 @@ export module NavUtil {
       {
         label: "Add Admin",
         icon: "user-plus",
-        link: "/add/admin",
+        link: "/app/organisation/members/add-admin",
       },
       {
         label: "Add Staff",
         icon: "user-plus",
-        link: "/add/staff",
+        link: "/app/organisation/members/add-staff",
       },
     ]
   }
@@ -50,12 +50,17 @@ export module NavUtil {
       {
         label: "Add School",
         icon: "school-circle-check",
-        link: "/add",
+        link: "/app/organisation/schools/add",
+      },
+      {
+        label: "View School",
+        icon: "school-circle-check",
+        link: "/app/organisation/schools/view",
       },
       {
         label: "Assign School Admin",
         icon: "user-lock",
-        link: "/assign-admin",
+        link: "/app/organisation/schools/assign-admin",
       },
     ]
   }

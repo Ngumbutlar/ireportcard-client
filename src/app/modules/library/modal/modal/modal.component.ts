@@ -34,8 +34,6 @@ export class ModalComponent implements OnInit {
   @ViewChild("modalDiv") modal!: HTMLDivElement;
 
   ngOnInit() {
-    console.log(this.modal)
-    console.log(this.content)
   }
 
   okAction() {

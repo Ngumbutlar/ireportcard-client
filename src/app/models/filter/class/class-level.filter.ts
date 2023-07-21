@@ -1,8 +1,8 @@
 import {SchoolBaseFilter} from "../base.filter";
 
 interface ClassLevelFilterParams {
-  schoolId: number
-  organisationId: number
+  schoolId?: number
+  organisationId?: number
   sectionId?: number
   name?: string
 }

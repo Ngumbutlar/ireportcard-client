@@ -10,7 +10,7 @@ export interface IAppService<T> {}
 @Injectable({
   providedIn: 'root'
 })
-export abstract class AppService<Entity, Payload> implements IAppService<Entity> {
+export abstract class AppService<ENTITY, PAYLOAD> implements IAppService<ENTITY> {
   protected readonly url: string;
 
   protected constructor(private httpClient: HttpClient, endpoint?: AppEndpoint, pathPrefix: string = '') {
@@ -19,17 +19,17 @@ export abstract class AppService<Entity, Payload> implements IAppService<Entity>
 
   urlWithPath = (path: string) => `${this.url}${path}`
 
-  postPayload = (payload: Payload, path: string = '') => this.httpClient.post<any>(`${this.url}${path}`, payload);
-  getPayload = (path: string = '') => this.httpClient.get<Payload>(`${this.url}${path}`);
+  postPayload = (payload: PAYLOAD, path: string = '') => this.httpClient.post<any>(`${this.url}${path}`, payload);
+  getPayload = (path: string = '') => this.httpClient.get<PAYLOAD>(`${this.url}${path}`);
 
-  list = (filter: BaseFilter): Observable<Payload[]> => {
-    return this.httpClient.get<Payload[]>(this.urlWithPath('/list'), {
+  list = (filter: BaseFilter): Observable<PAYLOAD[]> => {
+    return this.httpClient.get<PAYLOAD[]>(this.urlWithPath('/list'), {
       params: filter.parameters
     });
   }
 
-  listPayload = (filter: BaseFilter): Observable<Payload[]> => {
-    return this.httpClient.get<Payload[]>(this.urlWithPath('/list-payload'), {
+  listEntity = (filter: BaseFilter): Observable<ENTITY[]> => {
+    return this.httpClient.get<ENTITY[]>(this.urlWithPath('/list-payload'), {
       params: filter.parameters
     });
   }

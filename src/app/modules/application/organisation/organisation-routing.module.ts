@@ -7,6 +7,7 @@ import {OrgSchoolsAddComponent} from "./component/org-schools-add/org-schools-ad
 import {OrgSchoolsAssignStaffComponent} from "./component/org-schools-assign-staff/org-schools-assign-staff.component";
 import {OrgSchoolsViewComponent} from "./component/org-schools-view/org-schools-view.component";
 import {OrgDashboardComponent} from "./component/org-dashboard/org-dashboard.component";
+import {OrgMembersAddStaffComponent} from "./component/org-members-add-staff/org-members-add-staff.component";
 
 const routes: Routes = [
   {
@@ -21,8 +22,12 @@ const routes: Routes = [
         component: OrgMembersComponent
       },
       {
-        path: 'add/admin',
+        path: 'add-admin',
         component: OrgMembersAddAdminComponent
+      },
+      {
+        path: 'add-staff',
+        component: OrgMembersAddStaffComponent
       }
     ]
   },
@@ -40,6 +45,10 @@ const routes: Routes = [
       {
         path: 'add',
         component: OrgSchoolsAddComponent
+      },
+      {
+        path: 'view',
+        component: OrgSchoolsViewComponent
       },
       {
         path: 'assign-admin',

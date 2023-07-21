@@ -1,0 +1,22 @@
+<app-data-filter (submitEvent)="dataFilterAction($event)" [formModel]="filterForm"></app-data-filter>
+
+<p-table [title]="title" [value]="data">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Full Name</th>
+      <th>Subjects</th>
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template let-d pTemplate="body">
+    <tr>
+      <td>{{d.studentApplicationTrial.id}}</td>
+      <td>{{d.student.name}}</td>
+      <td>{{d.registeredSubjects.length}}</td>
+      <td>
+        <p-button label="View"></p-button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

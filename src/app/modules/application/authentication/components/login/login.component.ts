@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginFormAction() {
-    console.log(environment.apiUrl)
     const loginRequest: LoginRequest = {
       username: this.loginForm.get('username')?.value,
       password: this.loginForm.get('password')?.value,

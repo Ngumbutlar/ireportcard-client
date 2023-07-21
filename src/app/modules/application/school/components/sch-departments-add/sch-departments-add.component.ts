@@ -8,9 +8,8 @@ import { DepartmentEntity } from 'src/app/models/entity/subject/department.entit
 })
 export class SchDepartmentsAddComponent {
   loading: boolean = false;
-  
+
   submit = (dep : DepartmentEntity) => {
-    console.log('clicked')
     // Adds department to a school
   }
 }

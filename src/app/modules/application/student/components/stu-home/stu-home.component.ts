@@ -24,7 +24,6 @@ export class StuHomeComponent {
   options: any;
 
   constructor() {
-    console.log(this.doughnutData)
   }
 
 }
@@ -33,7 +32,6 @@ const doughnutData = () => {
   const start = new Date(today().getFullYear(), today().getMonth(), today().getDay(), 8, 0);
   const end = new Date(today().getFullYear(), today().getMonth(), today().getDay(), 14, 0);
   const total = end.getHours() - start.getHours();
-  console.log(start, end, total)
   return {
     completed: today().getHours() - start.getHours(),
     remaining: end.getHours() - today().getHours(),
