@@ -1,0 +1,30 @@
+<div class="p-3">
+  <div class="p">
+    <form (submit)="submit()" [formGroup]="form" class="formgrid grid">
+      <div class="pb-3 col-12">
+        <span class="text-700 text-2xl">{{title}}</span>
+      </div>
+
+      <!-- form -->
+      <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+                <span class="p-float-label">
+                    <input class="w-full" formControlName="name" id="name" pInputText>
+                    <label [htmlFor]="'name'">Enter Department Name</label>
+                </span>
+      </div>
+      <div *ngIf="editing" class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+                <span class="p-float-label">
+                    <p-dropdown [options]="[{name: 'Kanye', id: -1}]" formControlName="hod" optionLabel="name"
+                                optionValue="id" styleClass="w-full"></p-dropdown>
+                    <label [htmlFor]="'name'">Choose Head Of Department</label>
+                </span>
+      </div>
+
+      <!--buttons-->
+      <div class="field col-12">
+        <p-button [icon]="buttonProperty.icon" [label]="buttonProperty.label" [loading]="loading"
+                  type="submit"></p-button>
+      </div>
+    </form>
+  </div>
+</div>

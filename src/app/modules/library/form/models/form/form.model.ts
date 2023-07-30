@@ -1,7 +1,7 @@
 import {FormControlModel} from "./form-control.model";
 
 interface FormAttributes {
-  formControls: FormControlModel[]
+  controls: FormControlModel[]
 }
 
 export class FormModel {
@@ -11,6 +11,6 @@ export class FormModel {
   }
 
   static empty() {
-    return new FormModel({formControls: []});
+    return new FormModel({controls: []});
   }
 }

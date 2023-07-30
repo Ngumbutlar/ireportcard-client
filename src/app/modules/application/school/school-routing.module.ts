@@ -11,6 +11,9 @@ import {SchDepartmentsComponent} from "./components/sch-departments/sch-departme
 import {SchDepartmentsViewComponent} from "./components/sch-departments-view/sch-departments-view.component";
 import {SchSettingsComponent} from "./components/sch-settings/sch-settings.component";
 import {SchAcadCycleComponent} from "./components/sch-acad-cycle/sch-acad-cycle.component";
+import { SchDepartmentsAddComponent } from './components/sch-departments-add/sch-departments-add.component';
+import { SchClassesAddComponent } from './components/sch-classes-add/sch-classes-add.component';
+import { SchClassViewComponent } from './components/sch-class-view/sch-class-view.component';
 
 const routes: Routes = [
   {
@@ -60,7 +63,11 @@ const routes: Routes = [
       },
       {
         path: 'add',
-        component: SchStudentsAddComponent
+        component: SchDepartmentsAddComponent
+      },
+      {
+        path: 'view/:id',
+        component: SchDepartmentsViewComponent
       },
       {
         path: 'view',
@@ -70,7 +77,25 @@ const routes: Routes = [
   },
   {
     path: 'classes',
-    component: SchClassesComponent,
+    children:[
+      {
+        path:'',
+        component: SchClassesComponent,
+      },
+      {
+        path: 'add',
+        component: SchClassesAddComponent
+      },
+      {
+        path: 'view',
+        component: SchClassViewComponent
+      },
+      {
+        path: 'view/:id',
+        component: SchClassViewComponent
+      }
+    ]
+
   },
   {
     path: 'courses',

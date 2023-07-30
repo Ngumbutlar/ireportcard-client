@@ -5,12 +5,12 @@ import {AppEndpoint} from "../../../app.endpoints";
 import {Observable} from "rxjs";
 import {ClassLevelPayload} from "../../../models/payload/class-level.payload";
 import {ClassLevelFilter} from "../../../models/filter/class/class-level.filter";
-import {ClassLevelModel} from "../../../models/entity/class-level/class-level.model";
+import {ClassLevelEntity} from "../../../models/entity/class-level/class-level.entity";
 
 @Injectable({
   providedIn: 'root'
 })
-export class ClassLevelService extends AppService<ClassLevelModel, ClassLevelPayload> {
+export class ClassLevelService extends AppService<ClassLevelEntity, ClassLevelPayload> {
 
   constructor(private http: HttpClient) {
     super(http, AppEndpoint.CLASS_LEVEL)

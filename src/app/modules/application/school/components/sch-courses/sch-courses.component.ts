@@ -14,15 +14,10 @@ import {DepartmentPayload} from "../../../../../models/payload/department.payloa
   selector: 'app-sch-courses',
   styleUrls: ['./sch-courses.component.css'],
   template: `
-    <app-data-filter [formModel]="filterForm" (submitEvent)="filterAction($event)"></app-data-filter>
-    <app-datatable *ngIf="table" [table]="table"></app-datatable>
+    <app-table-list-courses></app-table-list-courses>
   `
 })
-export class SchCoursesComponent implements OnInit, FilterComponent {
-  filter: SubjectFilter = new SubjectFilter({});
-  filterForm: FormModel = SubjectFilterFormModel;
-  table?: TableModel;
-
+export class SchCoursesComponent implements OnInit {
   constructor(
     private _subjectService: SubjectService,
     private _departmentService: DepartmentService
@@ -30,36 +25,9 @@ export class SchCoursesComponent implements OnInit, FilterComponent {
   }
 
   ngOnInit(): void {
-    this._departmentService.list(SchoolBaseFilter.simple()).subscribe(res => {
-      this.filterForm.attribs.formControls[1].attribs.values =
-        FormControlValue.ofArray(res, (d: DepartmentPayload) => d.department);
-    });
-    this.refresh();
   }
 
-  filterAction($event: any): void {
-    this.filter.update($event);
-    this.refresh();
-  }
 
-  refresh = () => {
-    this._subjectService.list(this.filter).subscribe(res => {
-      this.table = SubjectUtil.createSubjectTable(res);
-    });
-  }
 }
 
-const SubjectFilterFormModel = new FormModel({
-  formControls: [
-    new FormControlModel({
-      label: "Name",
-      name: "name"
-    }),
-    new FormControlModel({
-      label: "Department",
-      name: "departmentId",
-      type: "select",
-      values: []
-    }),
-  ]
-});
+

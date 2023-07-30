@@ -1,0 +1,35 @@
+<div class="p-3">
+  <div class="p">
+    <form (submit)="submit()" [formGroup]="form" class="formgrid grid">
+      <div class="pb-3 col-12">
+        <span class="text-700 text-2xl">{{title}}</span>
+      </div>
+
+      <!-- form -->
+      <div class="field col-12 md:col-12 lg:col-4 pb-3">
+        <span class="p-float-label">
+            <input class="w-full" formControlName="classname" id="name" pInputText>
+            <label [htmlFor]="'name'">Class Level Name</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-6 lg:col-4 pb-3">
+        <span class="p-float-label">
+          <p-dropdown id="parent" [options]="classLevels" optionValue="id" optionLabel="name" styleClass="w-full" formControlName="parentId"></p-dropdown>
+          <label [htmlFor]="'parent'">Select Parent CLass Level</label>
+        </span>
+      </div>
+      <div class="field col-12 md:col-6 lg:col-4 pb-3">
+        <span class="p-float-label">
+          <p-dropdown id="section" [options]="sections" optionValue="id" optionLabel="name" styleClass="w-full" formControlName="sectionId"></p-dropdown>
+          <label [htmlFor]="'section'">Select Section</label>
+        </span>
+      </div>
+
+      <!--buttons-->
+      <div class="field col-12">
+        <p-button [icon]="buttonProperty.icon" [label]="buttonProperty.label" [loading]="loading"
+                  type="submit"></p-button>
+      </div>
+    </form>
+  </div>
+</div>

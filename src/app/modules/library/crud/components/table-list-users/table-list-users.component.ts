@@ -15,6 +15,7 @@ import {genderValues} from "../../../../../models/entity/base/gender.enum";
   styleUrls: ['./table-list-users.component.css']
 })
 export class TableListUsersComponent implements OnInit, DataComponent<UserPayload[]> {
+  @Input()
   data: UserPayload[] = [];
   @Input()
   title: string = "Users";
@@ -26,9 +27,9 @@ export class TableListUsersComponent implements OnInit, DataComponent<UserPayloa
 
   constructor(private _userService: UserService) {
     this.dataFilterForm = new FormModel({
-      formControls: [
+      controls: [
         new FormControlModel({
-          label: "Gender",
+          label:$localize `Gender`,
           name: "gender",
           type: "select",
           values: FormControlValue.ofArray(genderValues)
