@@ -9,14 +9,14 @@ import {SchoolEntity} from "../../../../../models/entity/school/school.entity";
   templateUrl: './admission.component.html',
   styleUrls: ['./admission.component.css']
 })
-export class AdmissionComponent implements OnInit{
+export class AdmissionComponent implements OnInit {
   school?: SchoolEntity;
 
-  constructor (
+  constructor(
     private _route: ActivatedRoute,
     private _routerService: RouterService,
     private _schoolService: SchoolService,
-  ){
+  ) {
   }
 
   ngOnInit() {

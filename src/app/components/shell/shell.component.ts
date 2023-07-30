@@ -16,7 +16,7 @@ import {UserPayload} from "../../models/entity/user/user.payload";
       <router-outlet></router-outlet>
     </app-main>
     <app-footer></app-footer>
-    <p-dialog header="Switch Dashboard" [modal]="true" [(visible)]="switchDialogVisible"
+    <p-dialog header="Switch Dashboard" [modal]="true"  [(visible)]="switchDialogVisible"
               [style]="{width: '75%', height: '50%'}">
       <app-switch (cancelSwitchDialogEvent)="switchDialogEventHandler($event)"></app-switch>
     </p-dialog>

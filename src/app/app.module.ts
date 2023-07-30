@@ -12,7 +12,8 @@ import {DialogModule} from "primeng/dialog";
 import {SwitchComponent} from "./components/switch/switch.component";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
-import { LandingComponent } from './components/landing/landing.component';
+import {LandingComponent} from './components/landing/landing.component';
+import {ToastModule} from "primeng/toast";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LandingComponent } from './components/landing/landing.component';
     SharedModule,
     DialogModule,
     FormsModule,
+    ToastModule,
   ],
   providers: [
     AppServiceInjectables,

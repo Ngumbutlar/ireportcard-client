@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { DepartmentEntity } from 'src/app/models/entity/subject/department.entity';
+import {DepartmentEntity} from 'src/app/models/entity/subject/department.entity';
 
 @Component({
   selector: 'app-sch-departments-add',
@@ -9,7 +9,7 @@ import { DepartmentEntity } from 'src/app/models/entity/subject/department.entit
 export class SchDepartmentsAddComponent {
   loading: boolean = false;
 
-  submit = (dep : DepartmentEntity) => {
+  submit = (dep: DepartmentEntity) => {
     // Adds department to a school
   }
 }

@@ -1,0 +1,30 @@
+<section class="surface-section">
+  <div class="border-round mb-3 p-2 md:p-4">
+    <span class="text-2xl">Academic Cycle Information</span>
+    <div class="flex flex-column">
+      <p-messages [(value)]="messages" [closable]="false" [enableService]="true"></p-messages>
+      <p-button *ngIf="studentApplicationTrial == undefined" label="Apply" (click)="showApplyDialog()" styleClass="p-button-sm"></p-button>
+      <p-button *ngIf="studentApplicationTrial != undefined" label="Pay Tuition" (click)="showTuitionPayDialog()" styleClass="p-button-sm"></p-button>
+    </div>
+    <div>
+      <p-dialog header="Apply" [(visible)]="applyVisible" [style]="{width: '75%', height: '50%'}">
+        <app-stu-academic-apply *ngIf="userAccount" [isStudent]="isStudent" [userAccount]="userAccount"></app-stu-academic-apply>
+      </p-dialog>
+    </div>
+    <div>
+      <p-dialog header="Apply" [(visible)]="tuitionPayVisible" [style]="{width: '75%', height: '50%'}">
+        <app-stu-academic-pay *ngIf="studentApplicationTrial" [sat]="studentApplicationTrial"></app-stu-academic-pay>
+      </p-dialog>
+    </div>
+  </div>
+
+  <div class="border-round mb-3 p-2 md:p-4">
+    <div class="">
+      <span class="block">Academic Year</span>
+      <span class="block">Start Date</span>
+      <span class="block">End Date</span>
+      <p>Here are your applied subjects for this academic year:</p>
+      <app-table-list-courses [default]="false" [data]="registeredSubjectsPayload"></app-table-list-courses>
+    </div>
+  </div>
+</section>

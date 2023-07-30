@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ClassLevelEntity} from "../../../../../models/entity/class-level/class-level.entity";
 
 @Component({

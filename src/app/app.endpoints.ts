@@ -94,7 +94,8 @@ export class AppEndpoint {
   static SUBJECT = new AppEndpoint(AppEndpointKey.SUBJECT);
   static USER = new AppEndpoint(AppEndpointKey.USER);
   static ACADEMIC_CYCLE = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE);
-  static STUDENT_APPLICATION_TRIAL = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION_TRIAL) ;
+  static STUDENT_APPLICATION = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION);
+  static STUDENT_APPLICATION_TRIAL = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION_TRIAL);
   private _base: string = "";
   private _path: string = "";
   private readonly _url: string

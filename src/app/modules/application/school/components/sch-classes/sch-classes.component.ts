@@ -47,7 +47,7 @@ export class SchClassesComponent implements OnInit, FilterComponent {
   }
 
   refresh = () => {
-    this._classLevelService.get(this.filter).subscribe(res => {
+    this._classLevelService.list(this.filter).subscribe(res => {
       this.table = ClassLevelUtil.createClassLevelTable(res);
     });
   }
@@ -57,11 +57,11 @@ const ClassesFilterFormModel = new FormModel(
   {
     controls: [
       new FormControlModel({
-        label: $localize `Name`,
+        label: $localize`Name`,
         name: "name"
       }),
       new FormControlModel({
-        label:$localize `Section`,
+        label: $localize`Section`,
         name: "sectionId",
         type: "select",
         values: []

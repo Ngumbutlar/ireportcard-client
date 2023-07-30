@@ -15,7 +15,7 @@
       <td>{{d.department.name}}</td>
       <td>{{(getUser(d.department.hodId) | async)?.user?.firstname ?? 'NONE'}}</td>
       <td>
-        <p-button label="View" (click)="viewAction(d.department.id)"></p-button>
+        <p-button (click)="viewAction(d.department.id)" label="View"></p-button>
       </td>
     </tr>
   </ng-template>

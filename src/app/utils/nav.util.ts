@@ -168,6 +168,12 @@ export module NavUtil {
     icon: "home",
     link: '/app/student'
   }
+  const appStudentAcademic: NavItem = {
+    code: "student-academic-nav",
+    label: "Academic",
+    icon: "file",
+    link: '/app/student/academic'
+  }
   const appStudentApplications: NavItem = {
     code: "student-application-nav",
     label: "Applications",
@@ -206,13 +212,13 @@ export module NavUtil {
   ]);
   export const STUDENT_NAV_GROUP = new NavItemGroup("Student", [
     appStudentHome,
+    appStudentAcademic,
     appStudentApplications,
     appStudentCourses,
     appStudentSettings
   ]);
 
-  export const TEACHER_NAV_GROUP = new NavItemGroup("Teacher", []);
-
+  // export const TEACHER_NAV_GROUP = new NavItemGroup("Teacher", []);
 
   const navItemToTreeNode = (navItem: NavItem): TreeNode => {
     return <TreeNode>{

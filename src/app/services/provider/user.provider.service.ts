@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {UserService} from "../http/user/user.service";
 import {UserPayload} from "../../models/entity/user/user.payload";
 import {BehaviorSubject} from "rxjs";
@@ -18,7 +18,7 @@ export class UserProviderService {
 
   get user() {
     if (this.userPayload == undefined) {
-      this._userService.getByPrincipal().subscribe(res =>{
+      this._userService.getByPrincipal().subscribe(res => {
         this._userSubject.next(res);
         this.userPayload = res;
       });

@@ -1,3 +1,3 @@
 <div class="surface-section border-round-xl">
-    <app-form-department-add [editing]="true" [deparment]="department?.department"></app-form-department-add>
+  <app-form-department-add *ngIf="payload" [department]="payload.department" [editing]="true"></app-form-department-add>
 </div>

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {EmptySchoolStats, EmptyStudentStats} from "../../../../../models/entity/authentication/login.model";
+import {EmptyStudentStats} from "../../../../../models/entity/authentication/login.model";
 import {range} from "rxjs";
 import {today} from "../../../../../utils/date.util";
 
@@ -10,8 +10,6 @@ import {today} from "../../../../../utils/date.util";
 })
 export class StuHomeComponent {
   studentStats = EmptyStudentStats;
-  protected readonly range = range;
-
   readonly doughnutData = doughnutData()
   data = {
     labels: ['Completed', 'Remaining'],
@@ -22,6 +20,7 @@ export class StuHomeComponent {
     ]
   };
   options: any;
+  protected readonly range = range;
 
   constructor() {
   }

@@ -24,6 +24,7 @@ export class FormSchoolUpsertComponent implements SubmitForm {
     motto: [this.school?.motto ?? '', Validators.required],
     organisationId: [DEFAULT_ID]
   });
+  protected readonly upsertButton = upsertButton(this.editing);
 
   constructor(private _fb: FormBuilder) {
   }
@@ -36,6 +37,4 @@ export class FormSchoolUpsertComponent implements SubmitForm {
     }
     this.submitEvent.emit(school)
   }
-
-  protected readonly upsertButton = upsertButton(this.editing);
 }

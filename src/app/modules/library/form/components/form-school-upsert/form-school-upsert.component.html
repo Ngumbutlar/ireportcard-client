@@ -6,14 +6,15 @@
     <form (submit)="submit()" [formGroup]="form" class="formgrid grid">
       <div class="col-12 md:col-6 flex flex-column gap-2 mb-2">
         <label for="name" i18n>Name</label>
-        <input pInputText class="p-inputtext-sm" formControlName="name" id="name" type="text">
+        <input class="p-inputtext-sm" formControlName="name" id="name" pInputText type="text">
       </div>
       <div class="col-12 md:col-6 flex flex-column gap-2 mb-2">
         <label for="name" i18n>Motto</label>
-        <input pInputText class="p-inputtext-sm" formControlName="name" id="motto" type="text">
+        <input class="p-inputtext-sm" formControlName="name" id="motto" pInputText type="text">
       </div>
       <div class="col-12 md:col-4 lg:col-2">
-        <p-button label="{{upsertButton.label}}" icon="{{upsertButton.icon}}" styleClass="p-button-sm w-full"></p-button>
+        <p-button icon="{{upsertButton.icon}}" label="{{upsertButton.label}}"
+                  styleClass="p-button-sm w-full"></p-button>
       </div>
     </form><!-- End Multi Columns Form -->
   </div>

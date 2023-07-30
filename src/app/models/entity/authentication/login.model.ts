@@ -62,7 +62,7 @@ export const EmptySchoolStats: EntityStat[] = [
 
 export const EmptyStudentStats: EntityStat[] = [
   {
-    name: $localize `Class Level`,
+    name: $localize`Class Level`,
     value: 0,
     icon: 'chalkboard-user'
   },

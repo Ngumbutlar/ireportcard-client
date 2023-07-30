@@ -15,11 +15,4 @@ export class ClassLevelService extends AppService<ClassLevelEntity, ClassLevelPa
   constructor(private http: HttpClient) {
     super(http, AppEndpoint.CLASS_LEVEL)
   }
-
-  get = (filter: ClassLevelFilter): Observable<ClassLevelPayload[]> => this.http.get<ClassLevelPayload[]>(
-    this.urlWithPath("/list"),
-    {
-      params: filter.parameters
-    }
-  )
 }

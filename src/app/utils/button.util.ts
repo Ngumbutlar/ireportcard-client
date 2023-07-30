@@ -5,8 +5,8 @@ type UpsertButton = {
   icon: string
 }
 export const upsertButton = (editing: boolean = false): UpsertButton => {
-  return  {
-    label: editing ? $localize `Save` : $localize `Add`,
+  return {
+    label: editing ? $localize`Save` : $localize`Add`,
     icon: editing ? 'fas fa-add' : 'fas fa-pen'
   }
 }

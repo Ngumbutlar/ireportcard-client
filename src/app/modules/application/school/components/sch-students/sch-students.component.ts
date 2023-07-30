@@ -27,7 +27,7 @@ export class SchStudentsComponent implements DataComponent<UserPayload[]> {
   });
   dataFilterForm: FormModel;
 
-  title =$localize `Students`;
+  title = $localize`Students`;
   data: UserPayload[] = [];
   protected readonly Role = Role;
 
@@ -35,7 +35,7 @@ export class SchStudentsComponent implements DataComponent<UserPayload[]> {
     this.dataFilterForm = new FormModel({
       controls: [
         new FormControlModel({
-          label:$localize `Gender`,
+          label: $localize`Gender`,
           name: "gender",
           type: "select",
           values: FormControlValue.ofArray(genderValues)
@@ -51,7 +51,7 @@ export class SchStudentsComponent implements DataComponent<UserPayload[]> {
   }
 
   refresh = () => {
-    this._userService.get(this.filter).subscribe(res => {
+    this._userService.listUsers(this.filter).subscribe(res => {
       this.data = res;
     });
   }

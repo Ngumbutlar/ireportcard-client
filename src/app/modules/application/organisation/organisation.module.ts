@@ -25,13 +25,13 @@ import {OrgDashboardComponent} from './component/org-dashboard/org-dashboard.com
     OrgSchoolsViewComponent,
     OrgDashboardComponent
   ],
-    imports: [
-        CommonModule,
-        OrganisationRoutingModule,
-        LibraryModule,
-        ReactiveFormsModule,
-        FormsModule
-    ]
+  imports: [
+    CommonModule,
+    OrganisationRoutingModule,
+    LibraryModule,
+    ReactiveFormsModule,
+    FormsModule
+  ]
 })
 export class OrganisationModule {
 }

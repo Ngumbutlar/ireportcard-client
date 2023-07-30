@@ -13,11 +13,13 @@ import {faIcon} from "../../../../../utils/icon.util";
   templateUrl: './org-schools-view.component.html',
   styleUrls: ['./org-schools-view.component.css']
 })
-export class OrgSchoolsViewComponent implements OnInit{
+export class OrgSchoolsViewComponent implements OnInit {
   schoolSelectDisabled: boolean = false;
+  schoolId?: number;
   protected school?: SchoolEntity;
   protected schools: SchoolEntity[] = [];
   protected readonly AppRoute = AppRoute;
+  protected readonly faIcon = faIcon;
 
   constructor(
     private _route: ActivatedRoute,
@@ -30,7 +32,7 @@ export class OrgSchoolsViewComponent implements OnInit{
 
   ngOnInit() {
     const schoolId = this._routerService.param<number>('id');
-    if(isValidId(schoolId)) {
+    if (isValidId(schoolId)) {
       this._schoolService.getById(schoolId).subscribe(res => {
         this.school = res;
         this.schoolSelectDisabled = true;
@@ -41,14 +43,11 @@ export class OrgSchoolsViewComponent implements OnInit{
   }
 
   visitSchoolDashboardAction() {
-    if(isValidId(this.school?.id)) {
+    if (isValidId(this.school?.id)) {
       this._localStorageService.set('school_id', this.school?.id);
       this._routerService.switchDashboard(`school`, true);
     }
   }
-
-  protected readonly faIcon = faIcon;
-  schoolId?: number;
 
   updateSchool() {
     this.school = this.schools.find(s => s.id == this.schoolId);

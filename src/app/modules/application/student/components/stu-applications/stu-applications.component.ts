@@ -10,7 +10,7 @@ import {StudentApplicationTrialPayload} from "../../../../../models/entity/stude
 })
 export class StuApplicationsComponent implements OnInit, DataComponent<StudentApplicationTrialPayload[]> {
   data: StudentApplicationTrialPayload[] = [];
-  title: string = $localize `Applications`;
+  title: string = $localize`Applications`;
 
   constructor(private satService: StudentApplicationTrialService) {
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataComponent} from "../../../component/data.component";
 import {SubjectPayload} from "../../../../../models/payload/subject.payload";
 import {SubjectFilter} from "../../../../../models/filter/subject/subject.filter";
@@ -14,9 +14,10 @@ import {DepartmentService} from "../../../../../services/http/subject/department
   templateUrl: './table-list-courses.component.html',
   styleUrls: ['./table-list-courses.component.css']
 })
-export class TableListCoursesComponent implements DataComponent<SubjectPayload[]> {
-  data: SubjectPayload[] = [];
-  title: string = 'Subjects';
+export class TableListCoursesComponent implements DataComponent<SubjectPayload[]>, OnInit {
+  @Input() default = true;
+  @Input() data: SubjectPayload[] = [];
+  @Input() title: string = 'Subjects';
   filter: SubjectFilter = new SubjectFilter({});
   filterForm: FormModel = SubjectFilterFormModel;
 
@@ -26,6 +27,13 @@ export class TableListCoursesComponent implements DataComponent<SubjectPayload[]
         FormControlValue.ofArray(res, (d: DepartmentPayload) => d.department);
     });
   }
+
+  ngOnInit() {
+    if (this.default) {
+      this.refresh();
+    }
+  }
+
   dataFilterAction($event: any) {
     if (this.filter) {
       this.filter.update($event);
@@ -41,11 +49,11 @@ export class TableListCoursesComponent implements DataComponent<SubjectPayload[]
 const SubjectFilterFormModel = new FormModel({
   controls: [
     new FormControlModel({
-      label:$localize `Name`,
+      label: $localize`Name`,
       name: "name"
     }),
     new FormControlModel({
-      label:$localize `Department`,
+      label: $localize`Department`,
       name: "departmentId",
       type: "select",
       values: []

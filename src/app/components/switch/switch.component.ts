@@ -26,6 +26,8 @@ import {SchoolEntity} from "../../models/entity/school/school.entity";
       </div>
       <div class="field">
         <p-dropdown
+          *ngIf="switchProps.option == 'school'"
+          appendTo="body"
           name="school"
           [options]="schools"
           [optionLabel]="'name'"

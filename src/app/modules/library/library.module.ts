@@ -40,12 +40,13 @@ import {InputNumberModule} from "primeng/inputnumber";
 import {MultiSelectModule} from "primeng/multiselect";
 import {AccordionModule} from "primeng/accordion";
 import {StepsModule} from "primeng/steps";
-import { ClassAddFormComponent } from './form/components/class-add-form/class-add-form.component';
+import {ClassAddFormComponent} from './form/components/class-add-form/class-add-form.component';
 import {ChartModule} from "primeng/chart";
-import { FormDepartmentAddComponent } from './form/components/form-department-add/form-department-add.component';
-import { TableListSatComponent } from './crud/components/table-list-sat/table-list-sat.component';
-import { TableListCoursesComponent } from './crud/components/table-list-courses/table-list-courses.component';
-import { FormUserAddComponent } from './form/components/form-user-add/form-user-add.component';
+import {FormDepartmentAddComponent} from './form/components/form-department-add/form-department-add.component';
+import {TableListSatComponent} from './crud/components/table-list-sat/table-list-sat.component';
+import {TableListCoursesComponent} from './crud/components/table-list-courses/table-list-courses.component';
+import {FormUserAddComponent} from './form/components/form-user-add/form-user-add.component';
+import { FormStudentTuitionPayComponent } from './form/components/form-student-tuition-pay/form-student-tuition-pay.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { FormUserAddComponent } from './form/components/form-user-add/form-user-
     TableListSatComponent,
     TableListCoursesComponent,
     FormUserAddComponent,
-    FormSchoolUpsertComponent
+    FormSchoolUpsertComponent,
+    FormStudentTuitionPayComponent
   ],
   exports: [
     ReactiveFormsModule,
@@ -97,6 +99,7 @@ import { FormUserAddComponent } from './form/components/form-user-add/form-user-
     CalendarModule,
     FileUploadModule,
     TabViewModule,
+    DialogModule,
     InputNumberModule,
     MultiSelectModule,
     AccordionModule,
@@ -111,6 +114,7 @@ import { FormUserAddComponent } from './form/components/form-user-add/form-user-
     TableListSatComponent,
     TableListCoursesComponent,
     FormUserAddComponent,
+    FormStudentTuitionPayComponent,
   ],
   imports: [
     CommonModule,
@@ -135,7 +139,8 @@ import { FormUserAddComponent } from './form/components/form-user-add/form-user-
     MultiSelectModule,
     AccordionModule,
     StepsModule,
-    ChartModule
+    ChartModule,
+    DialogModule
   ]
 })
 export class LibraryModule {

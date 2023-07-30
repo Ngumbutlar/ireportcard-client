@@ -29,7 +29,7 @@ export class TableListUsersComponent implements OnInit, DataComponent<UserPayloa
     this.dataFilterForm = new FormModel({
       controls: [
         new FormControlModel({
-          label:$localize `Gender`,
+          label: $localize`Gender`,
           name: "gender",
           type: "select",
           values: FormControlValue.ofArray(genderValues)
@@ -57,7 +57,7 @@ export class TableListUsersComponent implements OnInit, DataComponent<UserPayloa
 
   refresh = () => {
     if (this.filter) {
-      this._userService.get(this.filter).subscribe(res => {
+      this._userService.listUsers(this.filter).subscribe(res => {
         this.data = res;
       });
     }

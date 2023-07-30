@@ -14,7 +14,7 @@ import {UserService} from "../../../../../services/http/user/user.service";
   `
 })
 export class SchTeachersComponent implements DataComponent<UserPayload[]> {
-  title: string = $localize `Teachers`;
+  title: string = $localize`Teachers`;
   data: UserPayload[] = [];
   filter: UserFilter = new UserFilter({
     approved: true,

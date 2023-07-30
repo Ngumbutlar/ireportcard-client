@@ -11,7 +11,7 @@ import {SubmitForm} from "../form/submit.form";
   templateUrl: './form-user-add.component.html',
   styleUrls: ['./form-user-add.component.css']
 })
-export class FormUserAddComponent implements SubmitForm{
+export class FormUserAddComponent implements SubmitForm {
   form: FormGroup;
   @Input() role: Role = Role.USER;
   @Input() title: string = $localize`User Information`;

@@ -1,0 +1,17 @@
+<form class="formgrid grid" [formGroup]="form" (submit)="submit()">
+  <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+    <span class="p-float-label">
+      <input pInputText formControlName="amount"  class="p-inputtext-sm w-full">
+      <label [htmlFor]="'name'">Amount</label>
+    </span>
+  </div>
+  <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+    <span class="p-float-label">
+      <input pInputText formControlName="phone"  class="p-inputtext-sm w-full">
+      <label [htmlFor]="'name'">Phone</label>
+    </span>
+  </div>
+  <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+    <p-button [disabled]="!form.valid" type="submit" styleClass="p-button-sm" label="Start Application"></p-button>
+  </div>
+</form>

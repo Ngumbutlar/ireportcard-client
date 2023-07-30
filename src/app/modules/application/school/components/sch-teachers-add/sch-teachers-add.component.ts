@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import { DepartmentEntity } from 'src/app/models/entity/subject/department.entity';
 
 @Component({
   selector: 'app-sch-teachers-add',

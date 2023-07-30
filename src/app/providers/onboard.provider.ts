@@ -4,10 +4,11 @@ import {BehaviorSubject} from "rxjs";
 
 @Injectable({providedIn: "root"})
 export class OnboardProvider {
-  private onboardData: OnboardData = { index: 0 };
+  private onboardData: OnboardData = {index: 0};
 
   private readonly dataSubject = new BehaviorSubject(this.onboardData);
   readonly data$ = this.dataSubject.asObservable();
+
   constructor(private _localStorage: LocalStorageService) {
   }
 
@@ -43,6 +44,4 @@ type StudentOnboardFormValue = {
   username: string;
 }
 
-type TeacherOnboardFormValue = {
-
-}
+type TeacherOnboardFormValue = {}

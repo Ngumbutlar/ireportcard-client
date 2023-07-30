@@ -3,7 +3,8 @@ import {SubjectRegistration} from "../subject/subject-registration.entity";
 import {SubjectEntity} from "../subject/subject.entity";
 import {UserAccountEntity} from "../user/user-account.entity";
 import {StudentApplicationEntity} from "./student-application.entity";
-export class StudentApplicationTrialEntity extends BaseEntity{
+
+export class StudentApplicationTrialEntity extends BaseEntity {
   constructor(
     public order: number,
     public repeating: boolean,

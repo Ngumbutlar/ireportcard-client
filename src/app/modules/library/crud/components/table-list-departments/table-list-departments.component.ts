@@ -7,8 +7,8 @@ import {DepartmentFilter} from "../../../../../models/filter/subject/department.
 import {FormControlModel} from "../../../form/models/form/form-control.model";
 import {DepartmentService} from "../../../../../services/http/subject/department.service";
 import {UserService} from "../../../../../services/http/user/user.service";
-import { RouterService } from 'src/app/services/general/router.service';
-import { AppRoute, AppRoutes } from 'src/app/app.routes';
+import {RouterService} from 'src/app/services/general/router.service';
+import {AppRoute} from 'src/app/app.routes';
 
 @Component({
   selector: 'app-table-list-departments',
@@ -20,7 +20,7 @@ export class TableListDepartmentsComponent
   data: DepartmentPayload[] = [];
   filter: DepartmentFilter = new DepartmentFilter({});
   filterForm: FormModel = DepartmentFilterFormModel;
-  title: string =$localize `Departments`;
+  title: string = $localize`Departments`;
 
   constructor(
     private _departmentService: DepartmentService,
@@ -58,7 +58,7 @@ const DepartmentFilterFormModel = new FormModel(
   {
     controls: [
       new FormControlModel({
-        label:$localize `Name`,
+        label: $localize`Name`,
         name: "name"
       }),
     ]

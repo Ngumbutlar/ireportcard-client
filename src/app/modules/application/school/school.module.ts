@@ -22,7 +22,9 @@ import {SchSettingsEmailComponent} from './components/sch-settings-email/sch-set
 import {SchSettingsGeneralComponent} from './components/sch-settings-general/sch-settings-general.component';
 import {SchSettingsOtherComponent} from './components/sch-settings-other/sch-settings-other.component';
 import {SchAcadCycleComponent} from './components/sch-acad-cycle/sch-acad-cycle.component';
-import { SchClassViewComponent } from './components/sch-class-view/sch-class-view.component';
+import {SchClassViewComponent} from './components/sch-class-view/sch-class-view.component';
+import {SchCoursesAddComponent} from './components/sch-courses-add/sch-courses-add.component';
+import {SchCoursesViewComponent} from './components/sch-courses-view/sch-courses-view.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { SchClassViewComponent } from './components/sch-class-view/sch-class-vie
     SchSettingsGeneralComponent,
     SchSettingsOtherComponent,
     SchAcadCycleComponent,
-    SchClassViewComponent
+    SchClassViewComponent,
+    SchCoursesAddComponent,
+    SchCoursesViewComponent
   ],
   imports: [
     CommonModule,

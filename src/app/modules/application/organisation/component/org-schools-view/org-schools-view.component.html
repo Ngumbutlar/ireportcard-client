@@ -1,13 +1,14 @@
 <section class="section">
   <div class="py-2">
-    <p-dropdown [disabled]="schoolSelectDisabled" [(ngModel)]="schoolId" [options]="schools" (change)="updateSchool()" optionLabel="name"></p-dropdown>
+    <p-dropdown (change)="updateSchool()" [(ngModel)]="schoolId" [disabled]="schoolSelectDisabled" [options]="schools"
+                optionLabel="name"></p-dropdown>
   </div>
   <app-form-school-upsert [school]="school"></app-form-school-upsert>
   <div>
     <p-button
       (click)="visitSchoolDashboardAction()"
-      label="Visit Dashboard"
-      [icon]="faIcon('up-right-from-square')" i18n>
+      [icon]="faIcon('up-right-from-square')"
+      i18n label="Visit Dashboard">
     </p-button>
   </div>
 </section>

@@ -4,9 +4,11 @@ import {ClassLevelEntity} from 'src/app/models/entity/class-level/class-level.en
 import {SubmitForm} from '../form/submit.form';
 import {ClassLevelService} from "../../../../../services/http/class-level/class-level.service";
 import {SectionService} from "../../../../../services/http/school/section.service";
-import {ClassLevelFilter} from "../../../../../models/filter/class/class-level.filter";
 import {SectionEntity} from "../../../../../models/entity/school/section.entity";
 import {SchoolBaseFilter} from "../../../../../models/filter/base.filter";
+import {DropdownChangeEvent} from "primeng/dropdown";
+import {ClassLevelFilter} from "../../../../../models/filter/class/class-level.filter";
+import {ClassLevelType} from "../../../../../models/entity/base/class-level.enum";
 
 @Component({
   selector: 'app-class-add-form',
@@ -14,7 +16,7 @@ import {SchoolBaseFilter} from "../../../../../models/filter/base.filter";
   styleUrls: ['./class-add-form.component.css']
 })
 export class ClassAddFormComponent implements SubmitForm {
-  title: string = $localize`Class Information`
+  title: string = $localize`Class Level Information`
   form: FormGroup
   @Input()
   editing: boolean = false;
@@ -40,11 +42,7 @@ export class ClassAddFormComponent implements SubmitForm {
       sectionId: [{value: this.classLevel?.sectionId, disabled: this.editing}, Validators.required],
       parentId: [{value: this.classLevel?.parentId, disabled: this.editing}],
     });
-    // TODO the below must fetch according to changes in section service
-    this._classLevelService.listEntity(SchoolBaseFilter.simple()).subscribe(res => {
-      this.classLevels = res;
-    });
-    this._sectionService.listEntity(SchoolBaseFilter.simple()).subscribe(res => {
+    this._sectionService.listDto(SchoolBaseFilter.simple()).subscribe(res => {
       this.sections = res;
     })
   }
@@ -57,6 +55,15 @@ export class ClassAddFormComponent implements SubmitForm {
     this.loading = true
     this.submitEvent.emit(<ClassLevelEntity>{
       ...this.form.value
+    });
+  }
+
+  listClassLevels($event: DropdownChangeEvent) {
+    this._classLevelService.listDto(new ClassLevelFilter({
+      sectionId: $event.value,
+      type: ClassLevelType.MAIN
+    })).subscribe(res => {
+      this.classLevels = res;
     });
   }
 }

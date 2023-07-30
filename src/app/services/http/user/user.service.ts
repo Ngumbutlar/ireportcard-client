@@ -28,7 +28,7 @@ export class UserService extends AppService<UserEntity, UserPayload> {
     return this.http.get<UserPayload[]>(this.urlWithPath('/organisation'));
   }
 
-  get = (filter: UserFilter): Observable<UserPayload[]> => {
+  listUsers = (filter: UserFilter): Observable<UserPayload[]> => {
     let schoolId = DEFAULT_ID;
     if (typeof filter.params.schoolId == 'number') {
       schoolId = filter.params.schoolId < 0 ? schoolId : filter.params.schoolId
