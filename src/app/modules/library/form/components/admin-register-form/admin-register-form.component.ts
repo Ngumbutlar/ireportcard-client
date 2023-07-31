@@ -101,6 +101,8 @@ export class AdminRegisterFormComponent implements SubmitForm {
 
       },
       {
+        firstname: this.form.get('firstname')?.value,
+        lastname: this.form.get('lastname')?.value,
         gender: this.form.get('gender')?.value,
         role: Role.ORGANISATION_ADMIN,
         accountId: '',

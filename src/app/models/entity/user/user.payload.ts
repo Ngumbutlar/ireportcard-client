@@ -26,6 +26,8 @@ export class UserPayload {
       '',
       form.gender,
       role,
+      form.firstname,
+      form.lastname,
       undefined,
       form.schoolId,
       form.organisationId
