@@ -15,6 +15,6 @@ export class AcademicCycleService extends SchoolBasedAppService<never, AcademicC
   }
 
   launch = (payload: AcademicCyclePayload) => this.post(payload, "/launch");
-  currentCycle = (): Observable<AcademicCyclePayload> => this.get<AcademicCyclePayload>("/current-cycle");
 
+  currentCycle = (): Observable<AcademicCyclePayload> => this.get<AcademicCyclePayload>("/current-cycle");
 }

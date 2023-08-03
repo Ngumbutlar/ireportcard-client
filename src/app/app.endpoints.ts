@@ -5,13 +5,13 @@ export const AppEndpoints: AppEndpointType = {
   academic_cycle: {
     main: '/academic-cycle',
     year: {
-      main: 'year'
+      main: '/year'
     },
     term: {
-      main: 'term'
+      main: '/term'
     },
     sequence: {
-      main: 'sequence'
+      main: '/sequence'
     }
   },
   auth: {
@@ -55,7 +55,7 @@ export const AppEndpoints: AppEndpointType = {
   },
   subject: {
     main: '/subject'
-  }
+  },
 }
 
 
@@ -79,6 +79,8 @@ enum AppEndpointKey {
   DEPARTMENT = 'department',
   STUDENT_APPLICATION = 'student_application',
   STUDENT_APPLICATION_TRIAL = 'student_application_trial',
+  TERM = 'academic_cycle.term',
+  SEQUENCE = 'academic_cycle.sequence',
 }
 
 export class AppEndpoint {
@@ -96,6 +98,8 @@ export class AppEndpoint {
   static ACADEMIC_CYCLE = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE);
   static STUDENT_APPLICATION = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION);
   static STUDENT_APPLICATION_TRIAL = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION_TRIAL);
+  static TERM = new AppEndpoint(AppEndpointKey.TERM);
+  static SEQUENCE = new AppEndpoint(AppEndpointKey.SEQUENCE);
   private _base: string = "";
   private _path: string = "";
   private readonly _url: string

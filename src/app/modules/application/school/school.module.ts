@@ -25,6 +25,7 @@ import {SchAcadCycleComponent} from './components/sch-acad-cycle/sch-acad-cycle.
 import {SchClassViewComponent} from './components/sch-class-view/sch-class-view.component';
 import {SchCoursesAddComponent} from './components/sch-courses-add/sch-courses-add.component';
 import {SchCoursesViewComponent} from './components/sch-courses-view/sch-courses-view.component';
+import { SchAcadCycleTermComponent } from './components/sch-acad-cycle-term/sch-acad-cycle-term.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {SchCoursesViewComponent} from './components/sch-courses-view/sch-courses
     SchAcadCycleComponent,
     SchClassViewComponent,
     SchCoursesAddComponent,
-    SchCoursesViewComponent
+    SchCoursesViewComponent,
+    SchAcadCycleTermComponent
   ],
   imports: [
     CommonModule,
