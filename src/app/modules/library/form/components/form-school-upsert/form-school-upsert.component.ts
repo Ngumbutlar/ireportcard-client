@@ -37,4 +37,21 @@ export class FormSchoolUpsertComponent implements SubmitForm {
     }
     this.submitEvent.emit(school)
   }
+
+  patchForm(school: SchoolEntity) {
+    this.form.patchValue({
+      name: school.name,
+      motto: school.motto,
+      organisation: school.organisationId
+    });
+  }
+
+  protected readonly upsertButton = upsertButton(this.editing);
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const school = changes['school']['currentValue']
+    if (school) {
+      this.patchForm(school);
+    }
+  }
 }

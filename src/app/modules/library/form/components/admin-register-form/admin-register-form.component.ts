@@ -92,8 +92,6 @@ export class AdminRegisterFormComponent implements SubmitForm {
   submit() {
     const user = new UserPayload(
       {
-        firstname: this.form.get('firstname')?.value,
-        lastname: this.form.get('lastname')?.value,
         username: this.form.get('email')?.value,
         email: this.form.get('email')?.value,
         phone: this.form.get('phone')?.value,

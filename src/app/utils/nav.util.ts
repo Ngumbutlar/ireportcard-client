@@ -57,11 +57,6 @@ export module NavUtil {
         icon: "school-circle-check",
         link: "/app/organisation/schools/view",
       },
-      {
-        label: "Assign School Admin",
-        icon: "user-lock",
-        link: "/app/organisation/schools/assign-admin",
-      },
     ]
   }
 

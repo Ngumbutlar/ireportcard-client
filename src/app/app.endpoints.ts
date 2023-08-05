@@ -47,6 +47,9 @@ export const AppEndpoints: AppEndpointType = {
       main: '/school-staff'
     }
   },
+  school_setting: {
+    main: '/school-setting',
+  },
   student_application: {
     main: '/student-application'
   },
@@ -84,6 +87,11 @@ enum AppEndpointKey {
 }
 
 export class AppEndpoint {
+  private _base: string = "";
+  private _path: string = "";
+  private readonly _url: string
+
+  static ACADEMIC_CYCLE = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE);
   static AUTH_LOGIN = new AppEndpoint(AppEndpointKey.AUTH_LOGIN);
   static AUTH_REGISTER = new AppEndpoint(AppEndpointKey.AUTH_REGISTER);
   static AUTH_CHECK = new AppEndpoint(AppEndpointKey.AUTH_CHECK);
@@ -92,6 +100,7 @@ export class AppEndpoint {
   static LAUNCH = new AppEndpoint(AppEndpointKey.LAUNCH);
   static SCHOOL = new AppEndpoint(AppEndpointKey.SCHOOL);
   static SCHOOL_STAFF = new AppEndpoint(AppEndpointKey.SCHOOL_STAFF);
+  static SCHOOL_SETTING = new AppEndpoint('school_setting');
   static SECTION = new AppEndpoint(AppEndpointKey.SECTION);
   static SUBJECT = new AppEndpoint(AppEndpointKey.SUBJECT);
   static USER = new AppEndpoint(AppEndpointKey.USER);

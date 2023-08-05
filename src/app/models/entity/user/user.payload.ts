@@ -11,27 +11,24 @@ export class UserPayload {
   }
 
   static form(form: UserPayloadForm, role: Role = Role.USER) {
-    const user = new UserEntity(
-      form.username,
-      form.email,
-      form.firstname,
-      form.lastname,
-      undefined,
-      form.approved,
-      form.phone,
-      form.address
-    );
+    const user: UserEntity = {
+      username: form.username,
+      email: form.email,
+      accountId: undefined,
+      approved: false,
+      phone: form.phone,
+      address: form.address
+    }
 
-    const account = new UserAccountEntity(
-      '',
-      form.gender,
-      role,
-      form.firstname,
-      form.lastname,
-      undefined,
-      form.schoolId,
-      form.organisationId
-    );
+    const account: UserAccountEntity = {
+      accountId: '',
+        firstname: form.firstname,
+        lastname: form.lastname,
+        gender: form.gender,
+        role: role,
+        schoolId: form.schoolId,
+        organisationId: form.organisationId
+    };
 
     return new UserPayload(user, account);
   }
