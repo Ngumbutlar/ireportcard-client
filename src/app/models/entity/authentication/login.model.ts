@@ -54,7 +54,7 @@ export const EmptySchoolStats: EntityStat[] = [
     icon: 'building'
   },
   {
-    name: 'Applications',
+    name: 'Subjects',
     value: 0,
     icon: 'folder-open'
   }

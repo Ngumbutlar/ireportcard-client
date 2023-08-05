@@ -20,7 +20,7 @@ export class AuthenticationService extends AppService<any, any> {
   constructor(
     private http: HttpClient,
     private _localStorage: LocalStorageService,
-    private _routerService: RouterService
+    private _routerService: RouterService,
   ) {
     super(http);
   }

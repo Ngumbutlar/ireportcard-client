@@ -121,7 +121,7 @@ export module NavUtil {
   const appSchoolClasses: NavItem = {
     code: "class-nav",
     label: "Classes",
-    icon: "landmark",
+    icon: "users-rectangle",
     link: '/app/school/classes',
     children: [
       {
