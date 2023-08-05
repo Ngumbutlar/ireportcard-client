@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {SubmitForm} from "../form/submit.form";
 import {SchoolEntity} from "../../../../../models/entity/school/school.entity";
@@ -45,8 +45,6 @@ export class FormSchoolUpsertComponent implements SubmitForm {
       organisation: school.organisationId
     });
   }
-
-  protected readonly upsertButton = upsertButton(this.editing);
 
   ngOnChanges(changes: SimpleChanges): void {
     const school = changes['school']['currentValue']

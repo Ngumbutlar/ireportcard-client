@@ -9,8 +9,6 @@ export class UserAccountEntity extends BaseEntity {
     public lastname: string,
     public gender: Gender,
     public role: Role,
-    public firstname: string,
-    public lastname: string,
     public userId?: number,
     public schoolId?: number,
     public organisationId?: number,

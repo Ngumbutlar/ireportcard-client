@@ -26,6 +26,10 @@ export abstract class AppService<ENTITY, PAYLOAD> implements IAppService<ENTITY>
 
   get = <T> (path: string = '') => this.httpClient.get<T>(`${this.url}${path}`);
 
+  getPayload = (path: string = '') => this.get<PAYLOAD>(`${this.url}${path}`);
+
+  getEntity = (path: string = '') => this.get<ENTITY>(`${this.url}${path}`);
+
 
   list = (filter: BaseFilter): Observable<PAYLOAD[]> => {
     return this.httpClient.get<PAYLOAD[]>(this.urlWithPath('/list'), {
