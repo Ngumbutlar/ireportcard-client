@@ -56,6 +56,9 @@ export const AppEndpoints: AppEndpointType = {
   student_application_trial: {
     main: '/student-application-trial'
   },
+  student_class_list: {
+    main: '/student-class-list'
+  },
   subject: {
     main: '/subject'
   },
@@ -69,6 +72,9 @@ type AppEndpointType = {
 
 enum AppEndpointKey {
   ACADEMIC_CYCLE = 'academic_cycle',
+  ACADEMIC_CYCLE_SEQUENCE = 'academic_cycle.sequence',
+  ACADEMIC_CYCLE_TERM = 'academic_cycle.term',
+  ACADEMIC_CYCLE_YEAR = 'academic_cycle.year',
   AUTH_CHECK = 'auth.check',
   AUTH_LOGIN = "auth.login",
   AUTH_REGISTER = "auth.register",
@@ -82,6 +88,7 @@ enum AppEndpointKey {
   DEPARTMENT = 'department',
   STUDENT_APPLICATION = 'student_application',
   STUDENT_APPLICATION_TRIAL = 'student_application_trial',
+  STUDENT_CLASS_LIST = 'student_class_list',
   TERM = 'academic_cycle.term',
   SEQUENCE = 'academic_cycle.sequence',
 }
@@ -92,6 +99,9 @@ export class AppEndpoint {
   private readonly _url: string
 
   static ACADEMIC_CYCLE = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE);
+  static ACADEMIC_CYCLE_SEQUENCE = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE_SEQUENCE);
+  static ACADEMIC_CYCLE_TERM = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE_TERM);
+  static ACADEMIC_CYCLE_YEAR = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE_YEAR);
   static AUTH_LOGIN = new AppEndpoint(AppEndpointKey.AUTH_LOGIN);
   static AUTH_REGISTER = new AppEndpoint(AppEndpointKey.AUTH_REGISTER);
   static AUTH_CHECK = new AppEndpoint(AppEndpointKey.AUTH_CHECK);
@@ -106,6 +116,7 @@ export class AppEndpoint {
   static USER = new AppEndpoint(AppEndpointKey.USER);
   static STUDENT_APPLICATION = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION);
   static STUDENT_APPLICATION_TRIAL = new AppEndpoint(AppEndpointKey.STUDENT_APPLICATION_TRIAL);
+  static STUDENT_CLASS_LIST = new AppEndpoint(AppEndpointKey.STUDENT_CLASS_LIST);
   static TERM = new AppEndpoint(AppEndpointKey.TERM);
   static SEQUENCE = new AppEndpoint(AppEndpointKey.SEQUENCE);
 

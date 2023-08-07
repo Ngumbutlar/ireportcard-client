@@ -73,7 +73,7 @@ export class SidebarComponent implements OnInit {
         } else if (url.startsWith("/app/student")) {
           this.navItemTree = NavUtil.STUDENT_NAV_TREE;
         } else if (url.startsWith("/app/teacher")) {
-
+          this.navItemTree = NavUtil.TEACHER_NAV_TREE;
         }
       }
     });

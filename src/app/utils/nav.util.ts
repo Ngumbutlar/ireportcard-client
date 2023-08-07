@@ -1,8 +1,9 @@
 import {NavItem, NavItemGroup} from "../modules/library/navigation/models/nav-item.model";
 import {TreeNode} from "primeng/api";
 
-export module NavUtil {
 
+
+export module NavUtil {
   const appUser: NavItem = {
     code: "user-nav",
     label: "User",
@@ -66,7 +67,6 @@ export module NavUtil {
     icon: "bi bi-grid",
     link: '/app/school'
   }
-
   const appSchoolAcademicCycle: NavItem = {
     code: "school-academic-cycle-nav",
     label: "Academic Cycle",
@@ -136,7 +136,6 @@ export module NavUtil {
       }
     ]
   }
-
   const appSchoolCourses: NavItem = {
     code: "course-nav",
     label: "Courses",
@@ -156,7 +155,6 @@ export module NavUtil {
     icon: "gear",
     link: '/app/school/settings'
   }
-
   const appStudentHome: NavItem = {
     code: "student-dashboard-nav",
     label: "Home",
@@ -188,6 +186,24 @@ export module NavUtil {
     link: '/app/student/settings'
   }
 
+  const appTeacherDashboard: NavItem = {
+    code: "teacher-dashboard-nav",
+    label: "Dashboard",
+    icon: "bi bi-grid",
+    link: '/app/teacher'
+  }
+  const appTeacherAttendance: NavItem = {
+    code: "teacher-class-list-nav",
+    label: "Attendance",
+    icon: "calendar-check",
+    link: '/app/teacher/attendance'
+  }
+  const appTeacherClassList: NavItem = {
+    code: "teacher-class-list-nav",
+    label: "Class List",
+    icon: "table-list",
+    link: '/app/teacher/class-list'
+  }
 
   export const ORGANISATION_ADMIN_NAV_GROUP = new NavItemGroup("", [
     appOrganisationDashboard,
@@ -213,7 +229,11 @@ export module NavUtil {
     appStudentSettings
   ]);
 
-  // export const TEACHER_NAV_GROUP = new NavItemGroup("Teacher", []);
+  export const TEACHER_NAV_GROUP = new NavItemGroup("Teacher", [
+    appTeacherDashboard,
+    appTeacherAttendance,
+    appTeacherClassList
+  ]);
 
   const navItemToTreeNode = (navItem: NavItem): TreeNode => {
     return <TreeNode>{
@@ -228,5 +248,6 @@ export module NavUtil {
   export const ORGANISATION_ADMIN_NAV_TREE: TreeNode[] = ORGANISATION_ADMIN_NAV_GROUP.navItems.map(navItemToTreeNode);
   export const SCHOOL_ADMIN_NAV_TREE: TreeNode[] = SCHOOL_ADMIN_NAV_GROUP.navItems.map(navItemToTreeNode);
   export const STUDENT_NAV_TREE: TreeNode[] = STUDENT_NAV_GROUP.navItems.map(navItemToTreeNode);
+  export const TEACHER_NAV_TREE: TreeNode[] = TEACHER_NAV_GROUP.navItems.map(navItemToTreeNode);
 }
 
