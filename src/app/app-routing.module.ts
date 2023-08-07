@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'onboard',
     loadChildren: () => import('./modules/application/onboard/onboard.module').then(m => m.OnboardModule)
   },
+  { 
+    path: 'setup', 
+    loadChildren: () => import('./modules/application/setup/setup.module').then(m => m.SetupModule)
+  },
   {
     path: 'app',
     component: ShellComponent,

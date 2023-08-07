@@ -47,8 +47,10 @@ import {TableListSatComponent} from './crud/components/table-list-sat/table-list
 import {TableListCoursesComponent} from './crud/components/table-list-courses/table-list-courses.component';
 import {FormUserAddComponent} from './form/components/form-user-add/form-user-add.component';
 import { FormStudentTuitionPayComponent } from './form/components/form-student-tuition-pay/form-student-tuition-pay.component';
-import { TableListStudentClasslistComponent } from './crud/components/table-list-student-classlist/table-list-student-classlist.component';
-import { AttendanceUserComponent } from './general/components/attendance-user/attendance-user.component';
+import {FormOrgSetupOrganisationComponent} from "./form/components/form-org-setup-organisation/form-org-setup-organisation.component";
+import {
+  TableListStudentClasslistComponent
+} from "./crud/components/table-list-student-classlist/table-list-student-classlist.component";
 
 
 @NgModule({
@@ -79,8 +81,8 @@ import { AttendanceUserComponent } from './general/components/attendance-user/at
     FormUserAddComponent,
     FormSchoolUpsertComponent,
     FormStudentTuitionPayComponent,
-    TableListStudentClasslistComponent,
-    AttendanceUserComponent
+    FormOrgSetupOrganisationComponent,
+    TableListStudentClasslistComponent
   ],
   exports: [
     ReactiveFormsModule,
@@ -119,8 +121,8 @@ import { AttendanceUserComponent } from './general/components/attendance-user/at
     TableListCoursesComponent,
     FormUserAddComponent,
     FormStudentTuitionPayComponent,
-    TableListStudentClasslistComponent,
-    AttendanceUserComponent,
+    FormOrgSetupOrganisationComponent,
+    TableListStudentClasslistComponent
   ],
   imports: [
     CommonModule,
