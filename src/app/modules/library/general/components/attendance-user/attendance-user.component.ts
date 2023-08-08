@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {today} from "../../../../../utils/date.util";
-import {ChartData, ChartOptions} from "chart.js";
+import {ChartData} from "chart.js";
+import {AttendanceService} from "../../../../../services/http/attendance/attendance.service";
+import {LocationService} from "../../../../../services/general/location.service";
+import {AttendanceCheckPayload, AttendancePayload} from "../../../../../models/payload/attendancePeriodPayload";
+import {AttendanceType} from "../../../../../models/enum/attendance/attendance-type.enum";
 
 @Component({
   selector: 'app-attendance-user',
@@ -14,21 +18,64 @@ export class AttendanceUserComponent {
   timeSheetChartOptions: any;
 
   statisticsData: {label: string, stat: string, value: number}[] = []
+  attendanceToday?: AttendancePayload;
 
 
-  constructor() {
+  constructor(
+    private _attendanceService: AttendanceService,
+    private _locationService: LocationService
+  ) {
+    this._attendanceService.today().subscribe(res => {
+      this.attendanceToday = res.attendanceDetail
+
+      this.statisticsData.push(
+        {
+          label: 'Today',
+          stat: `${res.dayPeriod?.workedHours ?? 0} / ${res.dayPeriod?.totalHours}`,
+          value: (res.dayPeriod?.workedHours ?? 0) / (res.dayPeriod?.totalHours ?? 1)
+        },
+        {
+          label: 'This Week',
+          stat: `${res.weekPeriod?.workedHours ?? 0} / ${res.weekPeriod?.totalHours}`,
+          value: (res.weekPeriod?.workedHours ?? 0) / (res.weekPeriod?.totalHours ?? 1)
+        },
+        {
+          label: 'This Month',
+          stat: `${res.monthPeriod?.workedHours ?? 0} / ${res.monthPeriod?.totalHours}`,
+          value: (res.monthPeriod?.workedHours ?? 0) / (res.monthPeriod?.totalHours ?? 1)
+        },
+      );
+      this.timeSheetChartData = {
+        datasets: [
+          {
+            data: [(res.weekPeriod?.workedHours ?? 0), (res.weekPeriod?.totalHours ?? 1)]
+          }
+        ]
+      }
+    });
     this.timeSheetChartData = {
       datasets: [
         {
-          data: [50, 40]
+          data: [0, 0]
         }
       ]
     }
     this.timeSheetChartOptions = {
       cutout: '84%'
     }
-    this.statisticsData = [
-      {label: 'Today', stat: '6/8 hours', value: (6/8)*100}
-    ]
+  }
+
+  checkInAction =  async () =>{
+    console.log("asd")
+    await this._locationService.currentLocation().then((loc) => {
+      console.log(loc)
+      if (loc) {
+        const payload: AttendanceCheckPayload = {
+          location: loc,
+          attendanceType: AttendanceType.CLASS,
+        }
+        this._attendanceService.checkin(payload).subscribe()
+      }
+    });
   }
 }

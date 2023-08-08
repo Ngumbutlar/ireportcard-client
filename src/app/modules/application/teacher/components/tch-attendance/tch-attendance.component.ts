@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AttendanceService} from "../../../../../services/http/attendance/attendance.service";
 
 @Component({
   selector: 'app-tch-attendance',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tch-attendance.component.css']
 })
 export class TchAttendanceComponent {
+  constructor() {
 
+  }
 }

@@ -2,6 +2,7 @@ import {UserAccountEntity} from "./user-account.entity";
 import {UserEntity} from "./user.entity";
 import {Gender} from "../base/gender.enum";
 import {Role} from "../base/role.enum";
+import {Language} from "../base/language.enum";
 
 export class UserPayload {
   constructor(
@@ -17,7 +18,8 @@ export class UserPayload {
       accountId: undefined,
       approved: false,
       phone: form.phone,
-      address: form.address
+      address: form.address,
+      language: form.language
     }
 
     const account: UserAccountEntity = {
@@ -39,6 +41,7 @@ interface UserPayloadForm {
   email: string;
   firstname: string;
   lastname: string;
+  language: Language,
   approved?: boolean;
   phone?: string;
   address?: string;

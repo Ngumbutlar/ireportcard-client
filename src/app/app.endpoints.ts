@@ -14,6 +14,9 @@ export const AppEndpoints: AppEndpointType = {
       main: '/sequence'
     }
   },
+  attendance: {
+    main: '/attendance'
+  },
   auth: {
     main: '/auth',
     login: {
@@ -75,6 +78,7 @@ enum AppEndpointKey {
   ACADEMIC_CYCLE_SEQUENCE = 'academic_cycle.sequence',
   ACADEMIC_CYCLE_TERM = 'academic_cycle.term',
   ACADEMIC_CYCLE_YEAR = 'academic_cycle.year',
+  ATTENDANCE = 'attendance',
   AUTH_CHECK = 'auth.check',
   AUTH_LOGIN = "auth.login",
   AUTH_REGISTER = "auth.register",
@@ -102,6 +106,7 @@ export class AppEndpoint {
   static ACADEMIC_CYCLE_SEQUENCE = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE_SEQUENCE);
   static ACADEMIC_CYCLE_TERM = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE_TERM);
   static ACADEMIC_CYCLE_YEAR = new AppEndpoint(AppEndpointKey.ACADEMIC_CYCLE_YEAR);
+  static ATTENDANCE = new AppEndpoint(AppEndpointKey.ATTENDANCE);
   static AUTH_LOGIN = new AppEndpoint(AppEndpointKey.AUTH_LOGIN);
   static AUTH_REGISTER = new AppEndpoint(AppEndpointKey.AUTH_REGISTER);
   static AUTH_CHECK = new AppEndpoint(AppEndpointKey.AUTH_CHECK);

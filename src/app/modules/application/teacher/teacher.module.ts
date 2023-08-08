@@ -16,7 +16,8 @@ import { TchAttendanceComponent } from './components/tch-attendance/tch-attendan
     imports: [
         CommonModule,
         TeacherRoutingModule,
-        SharedModule
+        SharedModule,
+      LibraryModule
     ]
 })
 export class TeacherModule {
