@@ -65,6 +65,9 @@ export const AppEndpoints: AppEndpointType = {
   subject: {
     main: '/subject'
   },
+  organisation: {
+    main: '/organisation'
+  }
 }
 
 
@@ -95,6 +98,7 @@ enum AppEndpointKey {
   STUDENT_CLASS_LIST = 'student_class_list',
   TERM = 'academic_cycle.term',
   SEQUENCE = 'academic_cycle.sequence',
+  ORGANISATION = 'organisation'
 }
 
 export class AppEndpoint {
@@ -124,6 +128,7 @@ export class AppEndpoint {
   static STUDENT_CLASS_LIST = new AppEndpoint(AppEndpointKey.STUDENT_CLASS_LIST);
   static TERM = new AppEndpoint(AppEndpointKey.TERM);
   static SEQUENCE = new AppEndpoint(AppEndpointKey.SEQUENCE);
+  static ORGANISATION = new AppEndpoint(AppEndpointKey.ORGANISATION);
 
   constructor(key: string | AppEndpointKey) {
     this._url = this.constructUrl(key);

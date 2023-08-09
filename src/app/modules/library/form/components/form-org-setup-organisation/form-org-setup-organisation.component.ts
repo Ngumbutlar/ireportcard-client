@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {OrganisationPayload} from "../../../../../models/payload/organisation.payload";
+import {OrganisationSetupPayload} from "../../../../../models/payload/organisationSetupPayload";
+import {languageOptions} from "../../../../../models/entity/base/language.enum";
 
 @Component({
   selector: 'app-form-org-setup-organisation',
@@ -12,15 +13,17 @@ export class FormOrgSetupOrganisationComponent {
   adminInfo = $localize`Administrator Information`;
   btnLabel = $localize`Create Organisation`
   form: FormGroup;
-  @Output()
-  submitEvent: EventEmitter<OrganisationPayload> = new EventEmitter<OrganisationPayload>();
+  @Output() submitEvent: EventEmitter<OrganisationSetupPayload> = new EventEmitter<OrganisationSetupPayload>();
   @Input() loading!: boolean;
+  protected readonly  languageOptions = languageOptions;
+
   constructor(
     private _fb: FormBuilder
   ) {
     this.form = this._fb.group({
       organisation: this._fb.group({
-        name: ['', Validators.required]
+        name: ['', Validators.required],
+        language: ['', Validators.required]
       }),
       creator: this._fb.group({
         email: ['', [Validators.required, Validators.email]],
@@ -28,7 +31,7 @@ export class FormOrgSetupOrganisationComponent {
         lastname: ['', Validators.required],
         phone: ['']
       }),
-      password: ['']
+      password: ['', Validators.required]
     })
   }
 

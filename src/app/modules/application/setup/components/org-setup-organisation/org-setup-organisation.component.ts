@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {OrganisationPayload} from "../../../../../models/payload/organisation.payload";
+import {OrganisationSetupPayload} from "../../../../../models/payload/organisationSetupPayload";
 
 @Component({
   selector: 'app-org-setup-organisation',
@@ -7,11 +7,13 @@ import {OrganisationPayload} from "../../../../../models/payload/organisation.pa
   styleUrls: ['./org-setup-organisation.component.css']
 })
 export class OrgSetupOrganisationComponent {
-
-  loading: boolean = false
-  submit = (org: OrganisationPayload) => {
+  completed: boolean = false;
+  loading: boolean = false;
+  submit = (org: OrganisationSetupPayload) => {
     // TODO:  implement submit organisation data
-    this.loading = true
-    console.log(org);
+    this.loading = true;
+    setTimeout(() => {
+      this.completed = true;
+    }, 4000)
   }
 }

@@ -5,11 +5,25 @@
         <span class="text-700 text-2xl">{{title}}</span>
       </div>
       <!-- form -->
-      <div formGroupName="organisation" class="w-full flex">
-        <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+      <div formGroupName="organisation" class="w-full flex formgrid grid">
+        <div class="field col-12 md:col-6 lg:col-6 pb-3">
           <span class="p-float-label">
             <input class="w-full" formControlName="name" id="name" pInputText>
             <label [htmlFor]="'name'">Enter Organisation Name</label>
+          </span>
+        </div>
+        <div class="field col-12 md:col-6 lg:col-6 pb-3">
+          <span class="p-float-label">
+            <p-dropdown
+              optionLabel="name"
+              optionValue="value"
+              [options]="languageOptions"
+              formControlName="language"
+              id="language"
+              placeholder="Language"
+              styleClass="w-full">
+            </p-dropdown>
+            <label [htmlFor]="'language'" i18n>Language</label>
           </span>
         </div>
       </div>
