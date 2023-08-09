@@ -1,3 +1,3 @@
 export enum AttendanceType {
-  CLASS, SCHOOL, MEETING
+  CLASS = 'CLASS', SCHOOL = 'SCHOOL', MEETING = 'MEETING'
 }

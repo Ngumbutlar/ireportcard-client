@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {LocationEntity} from "../../models/entity/general/location.entity";
-import {Observable, Subject} from "rxjs";
+import {catchError, Observable, Subject, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,26 +8,25 @@ import {Observable, Subject} from "rxjs";
 export class LocationService {
 
   constructor() { }
-
-  currentLocation = async (): Promise<LocationEntity | null> => {
-    return new Promise<LocationEntity | null>((resolve) => {
+  currentLocation(): Observable<LocationEntity> {
+    return new Observable((observer) => {
       if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(
+        navigator.geolocation.getCurrentPosition(
           (position) => {
             const location: LocationEntity = {
               latitude: position.coords.latitude,
               longitude: position.coords.longitude,
               name: position.coords.accuracy.toString()
             };
-            resolve(location);
+            observer.next(location);
+            observer.complete();
           },
-          (err) => {
-            console.log(err);
-            resolve(null);
+          (error) => {
+            observer.error(error);
           }
         );
       } else {
-        resolve(null);
+        observer.error('Geolocation is not supported by this browser.');
       }
     });
   }

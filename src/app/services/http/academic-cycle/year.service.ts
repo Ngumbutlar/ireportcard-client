@@ -17,8 +17,7 @@ export class YearService extends SchoolBasedAppService<YearEntity, any> {
     super(http, AppEndpoint.ACADEMIC_CYCLE_YEAR);
   }
 
-  getAllBySchoolId(schoolId?: Id): Observable<YearEntity[]> {
-    schoolId = schoolId ?? SchoolId();
-    return this.get<YearEntity[]>(`/school/${schoolId}`)
+  getAllBySchoolId(): Observable<YearEntity[]> {
+    return this.get<YearEntity[]>()
   }
 }

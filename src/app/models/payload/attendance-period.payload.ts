@@ -19,9 +19,9 @@ export interface AttendancePeriodPayload {
 }
 
 export interface AttendanceCheckPayload {
+  check: AttendanceCheckEntity
   location: LocationEntity
   attendanceType: AttendanceType
-  attendanceId?: Id
   classLevelId?: Id
   subjectId?: Id
 }

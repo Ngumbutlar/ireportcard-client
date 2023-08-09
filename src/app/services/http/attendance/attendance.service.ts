@@ -5,7 +5,7 @@ import {
   AttendanceCheckPayload,
   AttendancePayload,
   AttendancePeriodPayload
-} from "../../../models/payload/attendancePeriodPayload";
+} from "../../../models/payload/attendance-period.payload";
 import {HttpClient} from "@angular/common/http";
 import {AppEndpoint} from "../../../app.endpoints";
 
@@ -20,7 +20,7 @@ export class AttendanceService extends SchoolBasedAppService<AttendanceEntity, A
 
   today = () => this.get<AttendancePeriodPayload>('/today')
 
-  checkin = (payload: AttendanceCheckPayload) => {
-    return this.post<AttendanceCheckPayload>(payload, '/checkin')
+  check = (payload: AttendanceCheckPayload) => {
+    return this.post<AttendanceCheckPayload>(payload, '/check')
   }
 }
