@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title" i18n>Register Admin Form</h5>
+
+    <!-- Multi Columns Form -->
+    <form (submit)="submit()" [formGroup]="form" class="formgrid grid">
+      <div class="col-12 md:col-6 flex flex-column gap-2 mb-2">
+        <label for="name" i18n>Name</label>
+        <input class="p-inputtext-sm" formControlName="name" id="name" pInputText type="text">
+      </div>
+      <div class="col-12 md:col-6 flex flex-column gap-2 mb-2">
+        <label for="name" i18n>Motto</label>
+        <input class="p-inputtext-sm" formControlName="name" id="motto" pInputText type="text">
+      </div>
+      <div class="col-12 md:col-4 lg:col-2">
+        <p-button icon="{{upsertButton.icon}}" label="{{upsertButton.label}}"
+                  styleClass="p-button-sm w-full"></p-button>
+      </div>
+    </form><!-- End Multi Columns Form -->
+  </div>
+</div>

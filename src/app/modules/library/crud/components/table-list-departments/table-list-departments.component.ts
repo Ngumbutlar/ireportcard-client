@@ -7,6 +7,9 @@ import {DepartmentFilter} from "../../../../../models/filter/subject/department.
 import {FormControlModel} from "../../../form/models/form/form-control.model";
 import {DepartmentService} from "../../../../../services/http/subject/department.service";
 import {UserService} from "../../../../../services/http/user/user.service";
+import { RouterService } from 'src/app/services/general/router.service';
+import { AppRoute, AppRoutes } from 'src/app/app.routes';
+import {lastValueFrom} from "rxjs";
 
 @Component({
   selector: 'app-table-list-departments',
@@ -18,11 +21,12 @@ export class TableListDepartmentsComponent
   data: DepartmentPayload[] = [];
   filter: DepartmentFilter = new DepartmentFilter({});
   filterForm: FormModel = DepartmentFilterFormModel;
-  title: string = "Departments";
+  title: string = $localize`Departments`;
 
   constructor(
     private _departmentService: DepartmentService,
     private _userService: UserService,
+    private _routerService: RouterService
   ) {
   }
 
@@ -39,19 +43,24 @@ export class TableListDepartmentsComponent
     this._departmentService.list(this.filter).subscribe(res => this.data = res);
   }
 
-  getUser(userId: number | null) {
+  async getUser(userId: number | null) {
     if (userId != null) {
-      return this._userService.getById(userId)
+      const user$ = this._userService.getById(userId);
+      return lastValueFrom(user$)
     }
     return undefined;
+  }
+
+  viewAction = (departmentId: number) => {
+    this._routerService.nav([AppRoute.APP_DEPARTMENT_VIEW, departmentId])
   }
 }
 
 const DepartmentFilterFormModel = new FormModel(
   {
-    formControls: [
+    controls: [
       new FormControlModel({
-        label: "Name",
+        label: $localize`Name`,
         name: "name"
       }),
     ]

@@ -1,0 +1,31 @@
+<div class="p-3">
+  <div class="p">
+    <div class="pb-3 col-12">
+      <span class="text-700 text-2xl">{{title}}</span>
+    </div>
+    <form (submit)="submit()" [formGroup]="form" class="formgrid grid py-2">
+      <!-- form -->
+      <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+        <span class="p-float-label">
+            <input class="w-full" formControlName="name" id="name" pInputText>
+            <label [htmlFor]="'name'">Enter Department Name</label>
+        </span>
+      </div>
+      <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+        <span class="p-float-label">
+            <p-dropdown
+              [options]="teachers" formControlName="hodId" optionLabel="name"
+              optionValue="id" placeholder="Select..." styleClass="w-full"></p-dropdown>
+            <label [htmlFor]="'name'">Choose Head Of Department</label>
+        </span>
+      </div>
+
+      <!--buttons-->
+      <div class="field col-12">
+        <p-button
+          [icon]="buttonProperty.icon" [label]="buttonProperty.label" [loading]="loading"
+          type="submit"></p-button>
+      </div>
+    </form>
+  </div>
+</div>

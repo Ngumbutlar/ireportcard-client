@@ -3,6 +3,7 @@ import {BaseEntity} from "../base/base.entity";
 export class SchoolEntity extends BaseEntity {
   constructor(
     public name: string,
+    public motto: string,
     public organisationId: number,
     public currentYearId?: number,
     public currentSequenceId?: number,

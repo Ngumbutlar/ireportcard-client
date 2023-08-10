@@ -4,13 +4,14 @@ import {Injectable} from "@angular/core";
 import {BaseFilter} from "../../../models/filter/base.filter";
 import {Observable} from "rxjs";
 
-export interface IAppService<T> {}
+export interface IAppService<T> {
+}
 
 
 @Injectable({
   providedIn: 'root'
 })
-export abstract class AppService<Entity, Payload> implements IAppService<Entity> {
+export abstract class AppService<ENTITY, PAYLOAD> implements IAppService<ENTITY> {
   protected readonly url: string;
 
   protected constructor(private httpClient: HttpClient, endpoint?: AppEndpoint, pathPrefix: string = '') {
@@ -19,10 +20,26 @@ export abstract class AppService<Entity, Payload> implements IAppService<Entity>
 
   urlWithPath = (path: string) => `${this.url}${path}`
 
-  postPayload = (payload: Payload, path: string = '') => this.httpClient.post<any>(`${this.url}${path}`, payload);
-  getPayload = (path: string = '') => this.httpClient.get<Payload>(`${this.url}${path}`);
+  post = <T> (payload: PAYLOAD | ENTITY | T, path: string = '') => {
+    return this.httpClient.post<any>(`${this.url}${path}`, payload);
+  }
 
-  list = (filter: BaseFilter): Observable<Payload[]> => this.httpClient.get<Payload[]>(this.urlWithPath('/list'), {
-    params: filter.parameters
-  });
+  get = <T> (path: string = '') => this.httpClient.get<T>(`${this.url}${path}`);
+
+  getPayload = (path: string = '') => this.get<PAYLOAD>(path);
+
+  getEntity = (path: string = '') => this.get<ENTITY>(path);
+
+
+  list = (filter: BaseFilter): Observable<PAYLOAD[]> => {
+    return this.httpClient.get<PAYLOAD[]>(this.urlWithPath('/list'), {
+      params: filter.parameters
+    });
+  }
+
+  listDto = (filter: BaseFilter): Observable<ENTITY[]> => {
+    return this.httpClient.get<ENTITY[]>(this.urlWithPath('/list-dto'), {
+      params: filter.parameters
+    });
+  }
 }

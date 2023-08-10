@@ -27,15 +27,15 @@ export class SchStudentsComponent implements DataComponent<UserPayload[]> {
   });
   dataFilterForm: FormModel;
 
-  title = "Students";
+  title = $localize`Students`;
   data: UserPayload[] = [];
   protected readonly Role = Role;
 
   constructor(private _userService: UserService) {
     this.dataFilterForm = new FormModel({
-      formControls: [
+      controls: [
         new FormControlModel({
-          label: "Gender",
+          label: $localize`Gender`,
           name: "gender",
           type: "select",
           values: FormControlValue.ofArray(genderValues)
@@ -51,8 +51,8 @@ export class SchStudentsComponent implements DataComponent<UserPayload[]> {
   }
 
   refresh = () => {
-    this._userService.get(this.filter).subscribe(res => {
-      this.data = res;
+    this._userService.listUsers(this.filter).subscribe(res => {
+      this.data = res.data;
     });
   }
 }

@@ -29,3 +29,10 @@ export const isValidId = (id?: Id | null) => {
   }
   return false;
 }
+
+export const isNullOrUndefined = <T extends BaseEntity>(entity?: T | null) => {
+  return entity == undefined || entity == null;
+}
+export const isNotNullOrUndefined = <T extends BaseEntity>(entity?: T | null) => {
+  return !isNullOrUndefined(entity)
+}

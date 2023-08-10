@@ -1,8 +1,9 @@
 import {NavItem, NavItemGroup} from "../modules/library/navigation/models/nav-item.model";
 import {TreeNode} from "primeng/api";
 
-export module NavUtil {
 
+
+export module NavUtil {
   const appUser: NavItem = {
     code: "user-nav",
     label: "User",
@@ -32,12 +33,12 @@ export module NavUtil {
       {
         label: "Add Admin",
         icon: "user-plus",
-        link: "/add/admin",
+        link: "/app/organisation/members/add-admin",
       },
       {
         label: "Add Staff",
         icon: "user-plus",
-        link: "/add/staff",
+        link: "/app/organisation/members/add-staff",
       },
     ]
   }
@@ -50,12 +51,12 @@ export module NavUtil {
       {
         label: "Add School",
         icon: "school-circle-check",
-        link: "/add",
+        link: "/app/organisation/schools/add",
       },
       {
-        label: "Assign School Admin",
-        icon: "user-lock",
-        link: "/assign-admin",
+        label: "View School",
+        icon: "school-circle-check",
+        link: "/app/organisation/schools/view",
       },
     ]
   }
@@ -66,7 +67,6 @@ export module NavUtil {
     icon: "bi bi-grid",
     link: '/app/school'
   }
-
   const appSchoolAcademicCycle: NavItem = {
     code: "school-academic-cycle-nav",
     label: "Academic Cycle",
@@ -109,6 +109,24 @@ export module NavUtil {
       {
         label: "Add",
         icon: "square-plus",
+        link: "/app/school/departments/add",
+      },
+      {
+        label: "View",
+        icon: "square-plus",
+        link: "/app/school/departments/view",
+      }
+    ]
+  }
+  const appSchoolClasses: NavItem = {
+    code: "class-nav",
+    label: "Classes",
+    icon: "users-rectangle",
+    link: '/app/school/classes',
+    children: [
+      {
+        label: "Add Class",
+        icon: "square-plus",
         link: "/app/school/classes/add",
       },
       {
@@ -118,20 +136,6 @@ export module NavUtil {
       }
     ]
   }
-  const appSchoolClasses: NavItem = {
-    code: "class-nav",
-    label: "Classes",
-    icon: "landmark",
-    link: '/app/school/classes',
-    children: [
-      {
-        label: "Add Class",
-        icon: "square-plus",
-        link: "/app/school/classes/add",
-      }
-    ]
-  }
-
   const appSchoolCourses: NavItem = {
     code: "course-nav",
     label: "Courses",
@@ -151,12 +155,17 @@ export module NavUtil {
     icon: "gear",
     link: '/app/school/settings'
   }
-
   const appStudentHome: NavItem = {
     code: "student-dashboard-nav",
     label: "Home",
     icon: "home",
     link: '/app/student'
+  }
+  const appStudentAcademic: NavItem = {
+    code: "student-academic-nav",
+    label: "Academic",
+    icon: "file",
+    link: '/app/student/academic'
   }
   const appStudentApplications: NavItem = {
     code: "student-application-nav",
@@ -177,6 +186,24 @@ export module NavUtil {
     link: '/app/student/settings'
   }
 
+  const appTeacherDashboard: NavItem = {
+    code: "teacher-dashboard-nav",
+    label: "Dashboard",
+    icon: "bi bi-grid",
+    link: '/app/teacher'
+  }
+  const appTeacherAttendance: NavItem = {
+    code: "teacher-class-list-nav",
+    label: "Attendance",
+    icon: "calendar-check",
+    link: '/app/teacher/attendance'
+  }
+  const appTeacherClassList: NavItem = {
+    code: "teacher-class-list-nav",
+    label: "Class List",
+    icon: "table-list",
+    link: '/app/teacher/class-list'
+  }
 
   export const ORGANISATION_ADMIN_NAV_GROUP = new NavItemGroup("", [
     appOrganisationDashboard,
@@ -196,13 +223,17 @@ export module NavUtil {
   ]);
   export const STUDENT_NAV_GROUP = new NavItemGroup("Student", [
     appStudentHome,
+    appStudentAcademic,
     appStudentApplications,
     appStudentCourses,
     appStudentSettings
   ]);
 
-  export const TEACHER_NAV_GROUP = new NavItemGroup("Teacher", []);
-
+  export const TEACHER_NAV_GROUP = new NavItemGroup("Teacher", [
+    appTeacherDashboard,
+    appTeacherAttendance,
+    appTeacherClassList
+  ]);
 
   const navItemToTreeNode = (navItem: NavItem): TreeNode => {
     return <TreeNode>{
@@ -217,5 +248,6 @@ export module NavUtil {
   export const ORGANISATION_ADMIN_NAV_TREE: TreeNode[] = ORGANISATION_ADMIN_NAV_GROUP.navItems.map(navItemToTreeNode);
   export const SCHOOL_ADMIN_NAV_TREE: TreeNode[] = SCHOOL_ADMIN_NAV_GROUP.navItems.map(navItemToTreeNode);
   export const STUDENT_NAV_TREE: TreeNode[] = STUDENT_NAV_GROUP.navItems.map(navItemToTreeNode);
+  export const TEACHER_NAV_TREE: TreeNode[] = TEACHER_NAV_GROUP.navItems.map(navItemToTreeNode);
 }
 

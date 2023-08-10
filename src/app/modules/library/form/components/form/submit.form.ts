@@ -6,4 +6,6 @@ export interface SubmitForm {
   form: FormGroup;
 
   submit(): void
+
+  patch?(value: any): void
 }

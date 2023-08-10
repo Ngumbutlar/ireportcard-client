@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {catchError, Observable, throwError} from 'rxjs';
+import {MessageService} from "primeng/api";
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
 
-  constructor() {
+  constructor(private msg: MessageService) {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
@@ -14,10 +15,14 @@ export class ErrorInterceptor implements HttpInterceptor {
     );
   }
 
-  private errorResponseHandler = (response: HttpErrorResponse) => {
-    if (response !== null && response.hasOwnProperty('error') && response.error.hasOwnProperty('message')) {
-      const apiError = response.error as ApiError
-      console.error(`${response.status}: ${apiError.message}`)
+  private errorResponseHandler = (response?: HttpErrorResponse | null) => {
+    if (response != null && response.hasOwnProperty('error') && response.error.hasOwnProperty('message')) {
+      const apiError = response.error as ApiError;
+      let error = 'Error';
+      if (typeof apiError.error === "string") {
+        error = apiError.error as string;
+      }
+      this.msg.add({severity: 'error', summary: error, detail: apiError.message})
     }
     return throwError(() => response)
   }
@@ -29,7 +34,7 @@ class ApiError {
     public messageCode: string,
     public path: string,
     public timestamp: string,
-    public error: {}
+    public error: {} | string
   ) {
   }
 }

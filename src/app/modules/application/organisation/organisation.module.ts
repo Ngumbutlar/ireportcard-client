@@ -10,7 +10,7 @@ import {OrgSchoolsComponent} from './component/org-schools/org-schools.component
 import {OrgSchoolsAddComponent} from './component/org-schools-add/org-schools-add.component';
 import {OrgSchoolsAssignStaffComponent} from './component/org-schools-assign-staff/org-schools-assign-staff.component';
 import {OrgSchoolsViewComponent} from './component/org-schools-view/org-schools-view.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {OrgDashboardComponent} from './component/org-dashboard/org-dashboard.component';
 
 
@@ -29,7 +29,8 @@ import {OrgDashboardComponent} from './component/org-dashboard/org-dashboard.com
     CommonModule,
     OrganisationRoutingModule,
     LibraryModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class OrganisationModule {

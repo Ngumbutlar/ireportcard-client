@@ -3,7 +3,7 @@
     <div class="col-12 md:col-6">
       <div class="surface-section p-3">
         <div class="card">
-          <p-steps [model]="items" [activeIndex]="(onboardData$() | async)?.index ?? 0"></p-steps>
+          <p-steps [activeIndex]="(onboardData$() | async)?.index ?? 0" [model]="items"></p-steps>
         </div>
         <router-outlet></router-outlet>
       </div>

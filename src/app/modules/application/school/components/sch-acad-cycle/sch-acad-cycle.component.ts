@@ -59,10 +59,14 @@ export class SchAcadCycleComponent implements OnInit {
       disabled:
         IsNotUndefined(this.academicCyclePayload) &&
         IsNotUndefined(this.academicCyclePayload?.year.cycleInfo.closingDate),
-      text: IsUndefined(this.academicCyclePayload) ? 'Launch Cycle' : 'Close Cycle',
-      action: IsUndefined(this.academicCyclePayload) ?
-        this.submit : () => {
+      text: IsUndefined(this.academicCyclePayload) ? $localize`Launch Cycle` : $localize`Close Cycle`,
+      action: () => {
+        if (IsUndefined(this.academicCyclePayload)) {
+          this.submit();
+        } else {
+
         }
+      }
     }
   }
 

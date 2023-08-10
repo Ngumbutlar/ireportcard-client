@@ -1,7 +1,6 @@
-import {ClassLevelModel} from "../entity/class-level/class-level.model";
-import {ClassLevelSubModel} from "../entity/class-level/class-level-sub.model";
+import {ClassLevelEntity} from "../entity/class-level/class-level.entity";
 
 export interface ClassLevelPayload {
-  classLevel: ClassLevelModel
-  subClassLevels: ClassLevelSubModel[]
+  classLevel: ClassLevelEntity
+  subClassLevels: any[]
 }

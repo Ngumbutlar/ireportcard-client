@@ -14,7 +14,6 @@ export class OrgSchoolsAddComponent {
   }
 
   addSchoolAction($event: SchoolEntity) {
-    console.log($event)
     this._schoolService.create($event).subscribe();
   }
 }

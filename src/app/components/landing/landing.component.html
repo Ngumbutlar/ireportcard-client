@@ -1,0 +1,115 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-3 sticky-top" id="bg-purple">
+  <div class="container">
+    <a [routerLink]="['/home']" class="navbar-brand logo fw-bold fs-3 color-blue">
+      Transkript
+    </a>
+    <button aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"
+            class="navbar-toggler collapsed d-flex d-lg-none flex-column justify-content-around"
+            data-bs-target="#navbarSupportedContent"
+            data-bs-toggle="collapse" type="button">
+      <span class="toggler-icon top-bar"></span>
+      <span class="toggler-icon middle-bar"></span>
+      <span class="toggler-icon bottom-bar"></span>
+    </button>
+
+    <!-- base info in the landing page -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul
+        class="navbar-nav mb-sm-5 d-flex justify-content-center align-items-center ms-auto mb-2 mb-lg-0 gap-4 sm:m-auto">
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active fs-5" href="#hero">Home</a>
+        </li>
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active fs-5" href="#service">Services</a>
+        </li>
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active fs-5" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a aria-current="page" class="nav-link active fs-5" href="#contact">Contact Us</a>
+        </li>
+      </ul>
+
+      <!-- auth components and user profiles -->
+      <div class="d-flex justify-content-center align-items-center gap-2 ms-auto">
+        <button [routerLink]="['/auth/login']" class="p-button-text" icon="pi pi-sign-in" label="Login" pButton
+                style="background-color: #fff !important;"
+                type="button"></button>
+        <button class="p-button-text" icon="pi pi-user-plus" label="Register" pButton
+                style="background-color: #fff !important;"
+                type="button"></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Page -->
+<section class="hero-wrapper" id="hero">
+  <div class="blue"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col text-center d-flex justify-content-center align-items-center gap-3 flex-column">
+        <h1 class="text-white">Empower Your School with Our <br> Advanced Record System</h1>
+        <h4 class="text-white fw-3 fs-4">Streamline Administrative Tasks and Improve Student Outcomes</h4>
+        <div class="buttons">
+          <button class="button btn-border">Get Started</button>
+          <button class="button btn-color">Create A School</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- service section -->
+<section class="service" id="service">
+  <div class="d-flex justify-content-center pt-4 pb-2 align-items-center">
+    <h3 class="fw-bold">Our Services</h3>
+  </div>
+  <div class="container bootstrap snippets bootdeys">
+    <div class="row text-center">
+      <div *ngFor="let data of serviceData" class="col-md-4 col-sm-6 content-card">
+        <div class="card-big-shadow">
+          <div [attr.data-color]="data.data_color" class="card card-just-text" data-background="color"
+               data-radius="none">
+            <div class="content">
+              <h4 class="title"><a href="#">{{data.title}}</a></h4>
+              <p class="description">{{data.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Us -->
+<section class="about-us" id="about">
+  <div class="d-flex justify-content-center pt-5 pb-2 align-items-center">
+    <h3 class="fw-bold">About Us</h3>
+  </div>
+  <div class="bg-light">
+    <div class="container py-5">
+      <div class="row h-100 align-items-center py-5">
+        <div class="col-lg-6">
+          <h1 class="display-4">Transkript</h1>
+          <p class="lead text-muted mb-0">Transkript is a leading software company, specializing in designing and
+            building innovative tools for efficient school management. With a focus on enhancing productivity, our
+            intuitive software solutions streamline workflows, data, and communication. We collaborate closely with
+            clients, leveraging cutting-edge technology to create customized, scalable applications that drive success
+            and deliver exceptional value. Experience the power of Transkript's software solutions today.</p>
+        </div>
+        <div class="col-lg-6 d-none d-lg-block"><img alt="" class="img-fluid" src="https://bootstrapious.com/i/snippets/sn-about/illus.png">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contact us page -->
+<section class="contact mb-5" id="contact">
+  <div class="d-flex justify-content-center py-4 align-items-center">
+    <h3 class="fw-bold">Contact Us</h3>
+  </div>
+  <app-contact></app-contact>
+</section>

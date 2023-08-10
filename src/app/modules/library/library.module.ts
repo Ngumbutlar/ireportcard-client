@@ -12,7 +12,7 @@ import {RouterLink} from "@angular/router";
 import {TableComponent} from './crud/components/table/table.component';
 import {DatatableComponent} from './crud/components/datatable/datatable.component';
 import {AdminRegisterFormComponent} from './form/components/admin-register-form/admin-register-form.component';
-import {SchoolAddFormComponent} from './form/components/school-add-form/school-add-form.component';
+import {FormSchoolUpsertComponent} from './form/components/form-school-upsert/form-school-upsert.component';
 import {
   AdminAssignSchoolFormComponent
 } from './form/components/admin-assign-school-form/admin-assign-school-form.component';
@@ -40,6 +40,23 @@ import {InputNumberModule} from "primeng/inputnumber";
 import {MultiSelectModule} from "primeng/multiselect";
 import {AccordionModule} from "primeng/accordion";
 import {StepsModule} from "primeng/steps";
+import {ClassAddFormComponent} from './form/components/class-add-form/class-add-form.component';
+import {ChartModule} from "primeng/chart";
+import {FormDepartmentAddComponent} from './form/components/form-department-add/form-department-add.component';
+import {TableListSatComponent} from './crud/components/table-list-sat/table-list-sat.component';
+import {TableListCoursesComponent} from './crud/components/table-list-courses/table-list-courses.component';
+import {FormUserAddComponent} from './form/components/form-user-add/form-user-add.component';
+import { FormStudentTuitionPayComponent } from './form/components/form-student-tuition-pay/form-student-tuition-pay.component';
+import {FormOrgSetupOrganisationComponent} from "./form/components/form-org-setup-organisation/form-org-setup-organisation.component";
+import {
+  TableListStudentClasslistComponent
+} from "./crud/components/table-list-student-classlist/table-list-student-classlist.component";
+import {AttendanceUserComponent} from "./general/components/attendance-user/attendance-user.component";
+import { FormCycleAcademicYearComponent } from './form/components/form-cycle-academic-year/form-cycle-academic-year.component';
+import { FormCycleSchoolTermComponent } from './form/components/form-cycle-school-term/form-cycle-school-term.component';
+import { FormCycleSequenceComponent } from './form/components/form-cycle-sequence/form-cycle-sequence.component';
+import {PaginatorModule} from "primeng/paginator";
+import { CrudTableListComponent } from './crud/components/crud-table-list/crud-table-list.component';
 
 
 @NgModule({
@@ -54,16 +71,34 @@ import {StepsModule} from "primeng/steps";
     TableComponent,
     DatatableComponent,
     AdminRegisterFormComponent,
-    SchoolAddFormComponent,
+    FormSchoolUpsertComponent,
     AdminAssignSchoolFormComponent,
     DatafilterComponent,
     ModalComponent,
     TableListUsersComponent,
     FormTeacherAddComponent,
     TableListClassesComponent,
-    TableListDepartmentsComponent
+    TableListDepartmentsComponent,
+    FormDepartmentAddComponent,
+    TableListDepartmentsComponent,
+    ClassAddFormComponent,
+    TableListSatComponent,
+    TableListCoursesComponent,
+    FormUserAddComponent,
+    FormSchoolUpsertComponent,
+    FormStudentTuitionPayComponent,
+    FormOrgSetupOrganisationComponent,
+    TableListStudentClasslistComponent,
+    AttendanceUserComponent,
+    FormCycleAcademicYearComponent,
+    FormCycleSchoolTermComponent,
+    FormCycleSequenceComponent,
+    AttendanceUserComponent,
+    CrudTableListComponent
   ],
   exports: [
+    PasswordModule,
+    PaginatorModule,
     ReactiveFormsModule,
     HeaderComponent,
     SidebarComponent,
@@ -73,7 +108,7 @@ import {StepsModule} from "primeng/steps";
     AvatarComponent,
     DatatableComponent,
     AdminRegisterFormComponent,
-    SchoolAddFormComponent,
+    FormSchoolUpsertComponent,
     DatafilterComponent,
     CardModule,
     ButtonModule,
@@ -84,16 +119,31 @@ import {StepsModule} from "primeng/steps";
     CalendarModule,
     FileUploadModule,
     TabViewModule,
+    DialogModule,
     InputNumberModule,
     MultiSelectModule,
     AccordionModule,
     StepsModule,
+    ChartModule,
     TableListUsersComponent,
     FormTeacherAddComponent,
     TableListClassesComponent,
     TableListDepartmentsComponent,
+    ClassAddFormComponent,
+    FormDepartmentAddComponent,
+    TableListSatComponent,
+    TableListCoursesComponent,
+    FormUserAddComponent,
+    FormStudentTuitionPayComponent,
+    FormOrgSetupOrganisationComponent,
+    TableListStudentClasslistComponent,
+    AttendanceUserComponent,
+    FormCycleAcademicYearComponent,
+    FormCycleSchoolTermComponent,
+    FormCycleSequenceComponent
   ],
   imports: [
+    PaginatorModule,
     CommonModule,
     ReactiveFormsModule,
     RouterLink,
@@ -115,7 +165,9 @@ import {StepsModule} from "primeng/steps";
     InputNumberModule,
     MultiSelectModule,
     AccordionModule,
-    StepsModule
+    StepsModule,
+    ChartModule,
+    DialogModule
   ]
 })
 export class LibraryModule {

@@ -1,0 +1,23 @@
+<div>
+  <form class="formgrid grid" [formGroup]="form" (submit)="submit()">
+    <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+        <span class="p-float-label">
+            <p-dropdown
+              [options]="classLevels" formControlName="classLevelId" optionLabel="name"
+              optionValue="id" placeholder="Select..." styleClass="w-full"></p-dropdown>
+            <label [htmlFor]="'name'">Select Class Level</label>
+        </span>
+    </div>
+    <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+        <span class="p-float-label">
+            <p-dropdown
+              [options]="students" formControlName="studentId"
+              optionLabel="name" optionValue="id" styleClass="w-full"></p-dropdown>
+            <label [htmlFor]="'name'">Select Student</label>
+        </span>
+    </div>
+    <div class="field col-12 w-full md:col-6 lg:col-4 pb-3">
+      <p-button [disabled]="!form.valid" type="submit" styleClass="p-button-sm" label="Start Application"></p-button>
+    </div>
+  </form>
+</div>

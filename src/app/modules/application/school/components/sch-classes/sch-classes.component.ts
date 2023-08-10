@@ -36,7 +36,7 @@ export class SchClassesComponent implements OnInit, FilterComponent {
 
   ngOnInit() {
     this._sectionService.list(SchoolBaseFilter.simple()).subscribe(res => {
-      this.filterForm.attribs.formControls[1].attribs.values =
+      this.filterForm.attribs.controls[1].attribs.values =
         FormControlValue.ofArray(res, (s: SectionPayload) => s.section);
     });
   }
@@ -47,7 +47,7 @@ export class SchClassesComponent implements OnInit, FilterComponent {
   }
 
   refresh = () => {
-    this._classLevelService.get(this.filter).subscribe(res => {
+    this._classLevelService.list(this.filter).subscribe(res => {
       this.table = ClassLevelUtil.createClassLevelTable(res);
     });
   }
@@ -55,13 +55,13 @@ export class SchClassesComponent implements OnInit, FilterComponent {
 
 const ClassesFilterFormModel = new FormModel(
   {
-    formControls: [
+    controls: [
       new FormControlModel({
-        label: "Name",
+        label: $localize`Name`,
         name: "name"
       }),
       new FormControlModel({
-        label: "Section",
+        label: $localize`Section`,
         name: "sectionId",
         type: "select",
         values: []

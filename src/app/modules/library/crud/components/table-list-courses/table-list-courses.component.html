@@ -1,0 +1,24 @@
+<app-data-filter *ngIf="default" (submitEvent)="dataFilterAction($event)" [formModel]="filterForm"></app-data-filter>
+
+<p-table [title]="title" [value]="data">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Coefficient</th>
+      <th>Code</th>
+      <th>Actions</th>
+    </tr>
+  </ng-template>
+  <ng-template let-d pTemplate="body">
+    <tr>
+      <td>{{d.subject.id}}</td>
+      <td>{{d.subject.name}}</td>
+      <td>{{d.subject.coefficient}}</td>
+      <td>{{d.subject.code}}</td>
+      <td>
+        <p-button label="View"></p-button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
